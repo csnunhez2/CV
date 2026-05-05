@@ -1,0 +1,11 @@
+{
+  "title": "Senior Backend Engineer",
+  "subtitle": "Java | Microservices | Cloud",
+  "aboutTitle": "About Me",
+  "aboutText": "Backend Engineer specialized in Java and microservices.",
+  "skillsTitle": "Skills",
+  "experienceTitle": "Experience",
+  "contactTitle": "Contact",
+  "exp1": "Worked on backend systems and migrated monolith to microservices.",
+  "exp2": "Mentored developers and reviewed code."
+}

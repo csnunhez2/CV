@@ -1,0 +1,172 @@
+import { motion } from "framer-motion";
+import { Award, ExternalLink } from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
+
+const certificates = [
+  {
+    title: "Data Usability for Organizations",
+    issuer: "IBM",
+    date: "Abril 2026",
+    link: "https://www.credly.com/badges/0cbddd24-6e9f-46d8-88c4-55a5fb526416/linked_in_profile",
+  },
+  {
+    title: "Data Classification",
+    issuer: "IBM",
+    date: "Abril 2026",
+    link: "https://www.credly.com/badges/a6c8ed20-41b4-429c-bcf5-617138092b65/linked_in_profile",
+  },
+  {
+    title: "Meta Certified Digital Marketing Associate",
+    issuer: "Meta",
+    date: "Marzo 2026",
+    end_date: "Marzo 2028",
+    link: "https://www.credly.com/badges/578d302d-40a3-4b0c-aca6-e987f116157b/linked_in_profile",
+  },
+  {
+    title: "IT Specialist - Python",
+    issuer: "Pearson",
+    date: "Marzo 2026",
+    end_date: "Marzo 2031",
+    link: "https://www.credly.com/badges/dca4ac3c-86bb-4a17-aacf-2ed85d6af1ee/linked_in_profile",
+  },
+  {
+    title: "Microsoft Certified: Azure Data Fundamentals",
+    issuer: "Microsoft",
+    date: "Marzo 2026",
+    link: "https://www.credly.com/badges/b85e2c8d-2f2e-42d5-aba2-f54a653c1e1f/linked_in_profile",
+  },
+  {
+    title: "Microsoft Certified: Azure AI Fundamentals",
+    issuer: "Microsoft",
+    date: "Marzo 2026",
+    link: "https://www.credly.com/badges/4dcef478-e19d-4429-891c-bcaa39e3d870/linked_in_profile",
+  },
+  {
+    title: "Microsoft Certified: Security, Compliance, and Identity Fundamentals",
+    issuer: "Microsoft",
+    date: "Marzo 2026",
+    link: "https://www.credly.com/badges/102dae06-4b28-4f7d-b2f6-4dcf00d846cb/linked_in_profile",
+  },
+  {
+    title: "Data Fundamentals",
+    issuer: "IBM",
+    date: "Febrero 2026",
+    link: "https://www.credly.com/badges/8e2b413c-8d33-4fe8-a30c-3f7064ce1bb3/linked_in_profile",
+  },
+  {
+    title: "Cybersecurity Fundamentals",
+    issuer: "IBM",
+    date: "Febrero 2026",
+    link: "https://www.credly.com/badges/84a2de3d-3346-43ff-82ea-f57a8e1e449e/linked_in_profile",
+  },
+  {
+    title: "Artificial Intelligence Fundamentals",
+    issuer: "IBM",
+    date: "Enero 2026",
+    link: "https://www.credly.com/badges/134800c9-43cd-4d11-ae8d-d9c101fea15f/linked_in_profile",
+  },
+];
+
+const getIssuerColor = (issuer: string) => {
+  switch (issuer.toLowerCase()) {
+    case "microsoft":
+      return "from-blue-500 to-blue-600";
+    case "ibm":
+      return "from-purple-500 to-purple-600";
+    case "meta":
+      return "from-pink-500 to-pink-600";
+    case "pearson":
+      return "from-amber-500 to-amber-600";
+    default:
+      return "from-gray-500 to-gray-600";
+  }
+};
+
+const Certificates = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4 },
+    },
+  };
+
+  return (
+    <ScrollReveal >
+      <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-lg border border-blue-100"
+    >
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent flex items-center gap-3"
+      >
+        <Award size={32} /> Certificados
+      </motion.h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {certificates.map((cert, i) => (
+          <motion.a
+            key={i}
+            href={cert.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            variants={itemVariants}
+            whileHover={{ y: -4, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
+            className="group p-5 border border-gray-200 rounded-xl bg-white hover:border-blue-300 transition-all cursor-pointer"
+          >
+            <div className="flex items-start gap-3">
+              <motion.div
+                className={`flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br ${getIssuerColor(
+                  cert.issuer
+                )} flex items-center justify-center text-white shadow-md`}
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <Award size={20} />
+              </motion.div>
+
+              <div className="flex-1 min-w-0">
+                <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
+                  {cert.title}
+                </h3>
+                <div className="flex items-center justify-between mt-2 text-xs text-gray-500 flex-wrap gap-1">
+                  <span className="font-medium text-gray-700">{cert.issuer}</span>
+                  <span>
+                    {cert.date}
+                    {cert.end_date && ` - ${cert.end_date}`}
+                  </span>
+                </div>
+              </div>
+
+              <motion.div
+                className="flex-shrink-0 text-gray-400 group-hover:text-blue-600 transition-colors"
+                whileHover={{ scale: 1.2 }}
+              >
+                <ExternalLink size={18} />
+              </motion.div>
+            </div>
+          </motion.a>
+        ))}
+      </div>
+    </motion.div>
+    </ScrollReveal>
+  );
+};
+
+export default Certificates;
