@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
-import { Code2, Mail } from "lucide-react";
+import { Code2, Mail, Menu, X } from "lucide-react";
 import ScrollProgressBar from "./ScrollProgressBar";
 
-const Header = () => {
+interface HeaderProps {
+  mobileMenuOpen: boolean;
+  setMobileMenuOpen: (open: boolean) => void;
+}
+
+const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
   return (
     <>
       <ScrollProgressBar />
@@ -10,7 +15,7 @@ const Header = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-slate-700 shadow-lg"
+      className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-slate-700 shadow-lg fixed top-0 left-0 right-0 z-40"
     >
       <div className="max-w-full px-8 py-4 flex items-center justify-between">
         {/* Logo e nome */}
@@ -29,48 +34,71 @@ const Header = () => {
           </div>
         </motion.div>
 
-        {/* Social links */}
+        {/* Social links and hamburger */}
         <div className="flex items-center gap-3">
-          <motion.a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.1, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors shadow-md text-sm font-bold"
-            title="GitHub"
-          >
-            GH
-          </motion.a>
+          {/* Desktop social links - hidden on mobile */}
+          <div className="hidden md:flex items-center gap-3">
+            <motion.a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors shadow-md text-sm font-bold"
+              title="GitHub"
+            >
+              GH
+            </motion.a>
 
-          <motion.a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.1, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors shadow-md text-sm font-bold"
-            title="LinkedIn"
-          >
-            IN
-          </motion.a>
+            <motion.a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors shadow-md text-sm font-bold"
+              title="LinkedIn"
+            >
+              IN
+            </motion.a>
 
-          <motion.a
-            href="mailto:contact@example.com"
-            whileHover={{ scale: 1.1, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors shadow-md"
-            title="Email"
-          >
-            <Mail size={18} />
-          </motion.a>
+            <motion.a
+              href="mailto:contact@example.com"
+              whileHover={{ scale: 1.1, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors shadow-md"
+              title="Email"
+            >
+              <Mail size={18} />
+            </motion.a>
 
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="ml-2 px-4 py-1.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-sm font-semibold hover:shadow-lg transition-shadow"
+            >
+              Descargar CV
+            </motion.button>
+          </div>
+
+          {/* Mobile hamburger menu - visible only on mobile */}
           <motion.button
-            whileHover={{ scale: 1.05 }}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="ml-2 px-4 py-1.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-sm font-semibold hover:shadow-lg transition-shadow"
+            className="md:hidden w-10 h-10 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors"
+            title="Menu"
           >
-            Descargar CV
+            <motion.div
+              animate={{ rotate: mobileMenuOpen ? 90 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {mobileMenuOpen ? (
+                <X size={20} />
+              ) : (
+                <Menu size={20} />
+              )}
+            </motion.div>
           </motion.button>
         </div>
       </div>

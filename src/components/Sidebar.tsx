@@ -19,9 +19,9 @@ const items = [
   { id: "languages", label: "Idiomas", icon: Globe },
 ];
 
-const Sidebar = ({ current, setCurrent }: any) => {
+const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
   return (
-    <div className="h-screen w-64 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-gray-300 p-6 flex flex-col border-r border-slate-800 shadow-2xl">
+    <div className="h-full w-64 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-gray-300 p-6 flex flex-col border-r border-slate-800 shadow-2xl">
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -33,7 +33,7 @@ const Sidebar = ({ current, setCurrent }: any) => {
         <p className="text-xs text-gray-500 mb-8">Software Engineer</p>
       </motion.div>
 
-      <nav className="flex flex-col gap-1">
+      <nav className="flex flex-col gap-1 overflow-y-auto flex-1">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -48,7 +48,10 @@ const Sidebar = ({ current, setCurrent }: any) => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3 }}
-                onClick={() => setCurrent(item.id)}
+                onClick={() => {
+                  setCurrent(item.id);
+                  onItemClick?.();
+                }}
                 className="relative px-4 py-3 rounded-lg text-left overflow-hidden group transition-all duration-300"
               >
                 {current === item.id && (
@@ -105,7 +108,7 @@ const Sidebar = ({ current, setCurrent }: any) => {
       </nav>
 
       <motion.div
-        className="mt-auto pt-6 border-t border-slate-800"
+        className="pt-6 border-t border-slate-800"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
