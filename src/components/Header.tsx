@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Code2, Mail, Menu, X } from "lucide-react";
 import ScrollProgressBar from "./ScrollProgressBar";
+import GitHubIcon from "../assets/icons/github.svg";
+import LinkedInIcon from "../assets/icons/linkedin.svg";
 
 interface HeaderProps {
   mobileMenuOpen: boolean;
@@ -39,31 +41,31 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
           {/* Desktop social links - hidden on mobile */}
           <div className="hidden md:flex items-center gap-3">
             <motion.a
-              href="https://github.com"
+              href="https://github.com/csnunhez2"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors shadow-md text-sm font-bold"
+              className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors shadow-md"
               title="GitHub"
             >
-              GH
+              <img src={GitHubIcon} alt="GitHub" className="w-5 h-5 invert" />
             </motion.a>
 
             <motion.a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/csnunhez/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors shadow-md text-sm font-bold"
+              className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors shadow-md"
               title="LinkedIn"
             >
-              IN
+              <img src={LinkedInIcon} alt="LinkedIn" className="w-5 h-5 invert" />
             </motion.a>
 
             <motion.a
-              href="mailto:contact@example.com"
+              href="mailto:cesar.santiago.nunhez@gmail.com"
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors shadow-md"

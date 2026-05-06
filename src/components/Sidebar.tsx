@@ -56,7 +56,7 @@ const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
               >
                 {current === item.id && (
                   <motion.div
-                    layoutId="active"
+                    layoutId={`active-${item.id}`}
                     className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
@@ -96,8 +96,8 @@ const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
 
                 {current === item.id && (
                   <motion.div
+                    layoutId={`indicator-${item.id}`}
                     className="absolute right-0 top-1/2 w-1 h-6 bg-white rounded-l-full"
-                    layoutId="indicator"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
