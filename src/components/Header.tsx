@@ -3,6 +3,7 @@ import { Code2, Mail, Menu, X } from "lucide-react";
 import ScrollProgressBar from "./ScrollProgressBar";
 import GitHubIcon from "../assets/icons/github.svg";
 import LinkedInIcon from "../assets/icons/linkedin.svg";
+import html2pdf from "html2pdf.js";
 
 interface HeaderProps {
   mobileMenuOpen: boolean;
@@ -10,6 +11,32 @@ interface HeaderProps {
 }
 
 const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
+  const downloadCV = () => {
+    // Get the cv-print element
+    const element = document.getElementById("cv-print");
+    if (!element) return;
+
+    // Temporarily show the element for html2pdf to capture it
+    const originalDisplay = (element as HTMLElement).style.display;
+    (element as HTMLElement).style.display = "block";
+
+    const opt = {
+      margin: 10,
+      filename: "CV_CesarNunhez.pdf",
+      image: { type: "jpeg" as const, quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { orientation: "portrait" as const, unit: "mm", format: "a4" },
+    };
+
+    // Generate PDF and hide element again
+    html2pdf()
+      .set(opt)
+      .from(element)
+      .save()
+      .then(() => {
+        (element as HTMLElement).style.display = originalDisplay;
+      });
+  };
   return (
     <>
       <ScrollProgressBar />
@@ -75,6 +102,7 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
             </motion.a>
 
             <motion.button
+              onClick={downloadCV}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="ml-2 px-4 py-1.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-sm font-semibold hover:shadow-lg transition-shadow"

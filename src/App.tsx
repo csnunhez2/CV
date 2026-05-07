@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
+import CVPrint from "./components/CVPrint";
 
 import About from "./components/About";
 import Experience from "./components/Experience";
@@ -38,6 +39,11 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 flex flex-col">
       <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
 
+      {/* Hidden CVPrint for PDF generation */}
+      <div id="cv-print" style={{ display: "none" }}>
+        <CVPrint />
+      </div>
+
       {/* Container for sidebar and main content, positioned below header */}
       <div className="flex-1 flex" style={{ marginTop: "76px" }}>
         {/* Desktop sidebar - fixed on the left */}
@@ -67,7 +73,7 @@ function App() {
         </motion.div>
 
         {/* Main content - pushed right on desktop to account for sidebar */}
-        <main className="flex-1 overflow-y-auto p-4 md:p-6 md:ml-64">
+        <main id="cv-content" className="flex-1 overflow-y-auto p-4 md:p-6 md:ml-64">
           <div className="relative z-10 max-w-5xl mx-auto">
             <AnimatePresence mode="wait">
               <motion.div
