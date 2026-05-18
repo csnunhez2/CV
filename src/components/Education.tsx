@@ -1,30 +1,32 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Award } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal";
 
-const education = [
-  {
-    title: "Grado en Ingeniería Informática",
-    place: "Universidade de Vigo",
-    date: "Septiembre 2012 - Julio 2017",
-    description: "Mención en Ingeniería del Software\nMención en Tecnologías de la Información",
-    icon: GraduationCap,
-  },
-  {
-    title: "Técnico Superior en Desarrollo de Aplicaciones Informáticas",
-    place: "I.E.S San Clemente",
-    date: "Septiembre 2010 - Junio 2012",
-    icon: Award,
-  },
-  {
-    title: "Técnico en Explotación de Sistemas Informáticos",
-    place: "I.E.S Maximino Romero de Lema",
-    date: "Septiembre 2007 - Junio 2009",
-    icon: Award,
-  },
-];
-
 const Education = () => {
+  const { t } = useTranslation();
+
+  const education = [
+    {
+      title: t("education.degree1.title"),
+      place: t("education.degree1.place"),
+      date: t("education.degree1.date"),
+      description: t("education.degree1.specialization"),
+      icon: GraduationCap,
+    },
+    {
+      title: t("education.degree2.title"),
+      place: t("education.degree2.place"),
+      date: t("education.degree2.date"),
+      icon: Award,
+    },
+    {
+      title: t("education.degree3.title"),
+      place: t("education.degree3.place"),
+      date: t("education.degree3.date"),
+      icon: Award,
+    },
+  ];
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -58,7 +60,7 @@ const Education = () => {
         transition={{ duration: 0.5 }}
         className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
       >
-        Educación
+        {t("education.title")}
       </motion.h2>
 
       <div className="space-y-6">

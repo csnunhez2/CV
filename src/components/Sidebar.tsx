@@ -8,18 +8,20 @@ import {
   Award,
   Globe,
 } from "lucide-react";
-
-const items = [
-  { id: "about", label: "Sobre mí", icon: User },
-  { id: "experience", label: "Experiencia", icon: Briefcase },
-  { id: "education", label: "Educación", icon: BookOpen },
-  { id: "skills", label: "Skills", icon: Code2 },
-  { id: "courses", label: "Cursos", icon: GraduationCap },
-  { id: "certificates", label: "Certificados", icon: Award },
-  { id: "languages", label: "Idiomas", icon: Globe },
-];
+import { useTranslation } from "react-i18next";
 
 const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
+  const { t } = useTranslation();
+
+  const items = [
+    { id: "about", label: t("sidebar.about"), icon: User },
+    { id: "experience", label: t("sidebar.experience"), icon: Briefcase },
+    { id: "education", label: t("sidebar.education"), icon: BookOpen },
+    { id: "skills", label: t("sidebar.skills"), icon: Code2 },
+    { id: "courses", label: t("sidebar.courses"), icon: GraduationCap },
+    { id: "certificates", label: t("sidebar.certificates"), icon: Award },
+    { id: "languages", label: t("sidebar.languages"), icon: Globe },
+  ];
   return (
     <div className="h-full w-64 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-gray-300 p-6 flex flex-col border-r border-slate-800 shadow-2xl">
       <motion.div

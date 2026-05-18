@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 const CVPrint = () => {
+  const { t } = useTranslation();
   const experienceData = [
     {
       role: "Full Stack Developer",
@@ -92,7 +95,7 @@ const CVPrint = () => {
 
       {/* Professional Summary */}
       <div style={styles.section}>
-        <h2 style={styles.sectionTitle}>PROFESSIONAL SUMMARY</h2>
+        <h2 style={styles.sectionTitle}>{t('pdf.professionalSummary').toUpperCase()}</h2>
         <p style={styles.paragraph}>
           Software engineer with 7+ years of experience specializing in backend development using Java and Spring Boot. Expertise in microservices architecture, REST APIs, and modern software development practices. Proven track record of delivering high-quality solutions in collaborative, agile environments with strong emphasis on testing and best practices.
         </p>
@@ -100,7 +103,7 @@ const CVPrint = () => {
 
       {/* Core Skills */}
       <div style={styles.section}>
-        <h2 style={styles.sectionTitle}>TECHNICAL SKILLS</h2>
+        <h2 style={styles.sectionTitle}>{t('pdf.technicalSkills').toUpperCase()}</h2>
         {skillsData.map((skillGroup, idx) => (
           <div key={idx} style={styles.skillGroup}>
             <p style={styles.skillCategory}><strong>{skillGroup.category}:</strong> {skillGroup.skills.join(", ")}</p>
@@ -110,7 +113,7 @@ const CVPrint = () => {
 
       {/* Professional Experience */}
       <div style={styles.section}>
-        <h2 style={styles.sectionTitle}>PROFESSIONAL EXPERIENCE</h2>
+        <h2 style={styles.sectionTitle}>{t('pdf.professionalExperience').toUpperCase()}</h2>
         {experienceData.map((exp, idx) => (
           <div key={idx} style={styles.experience}>
             <div style={styles.experienceHeader}>

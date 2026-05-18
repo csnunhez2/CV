@@ -1,71 +1,7 @@
 import { motion } from "framer-motion";
 import { Award, ExternalLink } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal";
-
-const certificates = [
-  {
-    title: "Data Usability for Organizations",
-    issuer: "IBM",
-    date: "Abril 2026",
-    link: "https://www.credly.com/badges/0cbddd24-6e9f-46d8-88c4-55a5fb526416/linked_in_profile",
-  },
-  {
-    title: "Data Classification",
-    issuer: "IBM",
-    date: "Abril 2026",
-    link: "https://www.credly.com/badges/a6c8ed20-41b4-429c-bcf5-617138092b65/linked_in_profile",
-  },
-  {
-    title: "Meta Certified Digital Marketing Associate",
-    issuer: "Meta",
-    date: "Marzo 2026",
-    end_date: "Marzo 2028",
-    link: "https://www.credly.com/badges/578d302d-40a3-4b0c-aca6-e987f116157b/linked_in_profile",
-  },
-  {
-    title: "IT Specialist - Python",
-    issuer: "Pearson",
-    date: "Marzo 2026",
-    end_date: "Marzo 2031",
-    link: "https://www.credly.com/badges/dca4ac3c-86bb-4a17-aacf-2ed85d6af1ee/linked_in_profile",
-  },
-  {
-    title: "Microsoft Certified: Azure Data Fundamentals",
-    issuer: "Microsoft",
-    date: "Marzo 2026",
-    link: "https://www.credly.com/badges/b85e2c8d-2f2e-42d5-aba2-f54a653c1e1f/linked_in_profile",
-  },
-  {
-    title: "Microsoft Certified: Azure AI Fundamentals",
-    issuer: "Microsoft",
-    date: "Marzo 2026",
-    link: "https://www.credly.com/badges/4dcef478-e19d-4429-891c-bcaa39e3d870/linked_in_profile",
-  },
-  {
-    title: "Microsoft Certified: Security, Compliance, and Identity Fundamentals",
-    issuer: "Microsoft",
-    date: "Marzo 2026",
-    link: "https://www.credly.com/badges/102dae06-4b28-4f7d-b2f6-4dcf00d846cb/linked_in_profile",
-  },
-  {
-    title: "Data Fundamentals",
-    issuer: "IBM",
-    date: "Febrero 2026",
-    link: "https://www.credly.com/badges/8e2b413c-8d33-4fe8-a30c-3f7064ce1bb3/linked_in_profile",
-  },
-  {
-    title: "Cybersecurity Fundamentals",
-    issuer: "IBM",
-    date: "Febrero 2026",
-    link: "https://www.credly.com/badges/84a2de3d-3346-43ff-82ea-f57a8e1e449e/linked_in_profile",
-  },
-  {
-    title: "Artificial Intelligence Fundamentals",
-    issuer: "IBM",
-    date: "Enero 2026",
-    link: "https://www.credly.com/badges/134800c9-43cd-4d11-ae8d-d9c101fea15f/linked_in_profile",
-  },
-];
 
 const getIssuerColor = (issuer: string) => {
   switch (issuer.toLowerCase()) {
@@ -83,6 +19,73 @@ const getIssuerColor = (issuer: string) => {
 };
 
 const Certificates = () => {
+  const { t } = useTranslation();
+
+  const certificates = [
+    {
+      title: "Data Usability for Organizations",
+      issuer: "IBM",
+      date: "Abril 2026",
+      link: "https://www.credly.com/badges/0cbddd24-6e9f-46d8-88c4-55a5fb526416/linked_in_profile",
+    },
+    {
+      title: "Data Classification",
+      issuer: "IBM",
+      date: "Abril 2026",
+      link: "https://www.credly.com/badges/a6c8ed20-41b4-429c-bcf5-617138092b65/linked_in_profile",
+    },
+    {
+      title: t("certificates.meta"),
+      issuer: "Meta",
+      date: "Marzo 2026",
+      end_date: "Marzo 2028",
+      link: "https://www.credly.com/badges/578d302d-40a3-4b0c-aca6-e987f116157b/linked_in_profile",
+    },
+    {
+      title: t("certificates.pearson"),
+      issuer: "Pearson",
+      date: "Marzo 2026",
+      end_date: "Marzo 2031",
+      link: "https://www.credly.com/badges/dca4ac3c-86bb-4a17-aacf-2ed85d6af1ee/linked_in_profile",
+    },
+    {
+      title: "Microsoft Certified: Azure Data Fundamentals",
+      issuer: "Microsoft",
+      date: "Marzo 2026",
+      link: "https://www.credly.com/badges/b85e2c8d-2f2e-42d5-aba2-f54a653c1e1f/linked_in_profile",
+    },
+    {
+      title: "Microsoft Certified: Azure AI Fundamentals",
+      issuer: "Microsoft",
+      date: "Marzo 2026",
+      link: "https://www.credly.com/badges/4dcef478-e19d-4429-891c-bcaa39e3d870/linked_in_profile",
+    },
+    {
+      title: "Microsoft Certified: Security, Compliance, and Identity Fundamentals",
+      issuer: "Microsoft",
+      date: "Marzo 2026",
+      link: "https://www.credly.com/badges/102dae06-4b28-4f7d-b2f6-4dcf00d846cb/linked_in_profile",
+    },
+    {
+      title: "Data Fundamentals",
+      issuer: "IBM",
+      date: "Febrero 2026",
+      link: "https://www.credly.com/badges/8e2b413c-8d33-4fe8-a30c-3f7064ce1bb3/linked_in_profile",
+    },
+    {
+      title: "Cybersecurity Fundamentals",
+      issuer: "IBM",
+      date: "Febrero 2026",
+      link: "https://www.credly.com/badges/84a2de3d-3346-43ff-82ea-f57a8e1e449e/linked_in_profile",
+    },
+    {
+      title: "Artificial Intelligence Fundamentals",
+      issuer: "IBM",
+      date: "Enero 2026",
+      link: "https://www.credly.com/badges/134800c9-43cd-4d11-ae8d-d9c101fea15f/linked_in_profile",
+    },
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -116,7 +119,7 @@ const Certificates = () => {
         transition={{ duration: 0.5 }}
         className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent flex items-center gap-3"
       >
-        <Award size={32} /> Certificados
+        <Award size={32} /> {t("certificates.title")}
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

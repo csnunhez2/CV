@@ -1,11 +1,123 @@
 {
-  "title": "Ingeniero Backend Senior",
-  "subtitle": "Java | Microservicios | Cloud",
-  "aboutTitle": "Sobre mí",
-  "aboutText": "Ingeniero backend especializado en Java y microservicios.",
-  "skillsTitle": "Skills",
-  "experienceTitle": "Experiencia",
-  "contactTitle": "Contacto",
-  "exp1": "Trabajo en sistemas backend y migración de monolito a microservicios.",
-  "exp2": "Mentorización de desarrolladores y revisión de código."
+  "header": {
+    "softwareEngineer": "Ingeniero de Software",
+    "downloadCV": "Descargar CV"
+  },
+  "sidebar": {
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "skills": "Skills",
+    "courses": "Cursos",
+    "certificates": "Certificados",
+    "languages": "Idiomas",
+    "copyright": "© 2024 - César.dev"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "p1": "Ingeniero de software con más de 7 años de experiencia trabajando principalmente en backend con Java y Spring Boot, desarrollando APIs y evolucionando aplicaciones hacia arquitecturas de microservicios.",
+    "p2": "A lo largo de mi carrera he participado en proyectos tanto internos como para clientes internacionales, lo que me ha permitido trabajar en entornos colaborativos, con metodologías ágiles y con un enfoque claro en la calidad del software, el testing y las buenas prácticas.",
+    "p3": "En los últimos años también he asumido un rol más activo dentro de los equipos, apoyando a otros desarrolladores, revisando código y ayudando en la toma de decisiones técnicas, además de mi experiencia como tutor en bootcamps, donde he acompañado a perfiles junior en su crecimiento profesional.",
+    "p4": "Me interesa especialmente seguir evolucionando hacia roles con mayor impacto en producto y arquitectura, donde pueda no solo desarrollar soluciones, sino también participar en su diseño, escalabilidad y mejora continua.",
+    "p5": "Me considero una persona constante, con mentalidad analítica y orientada a equipo, que disfruta entendiendo los problemas en profundidad y buscando soluciones simples, mantenibles y de calidad.",
+    "tags": "Java, Spring Boot, Microservicios, Backend, Testing"
+  },
+  "experience": {
+    "title": "Experiencia Profesional",
+    "fullstack": {
+      "role": "Desarrollador Full Stack",
+      "company": "Imatia",
+      "date": "Junio 2018 - Presente",
+      "description": "Desarrollé aplicaciones con Spring Boot, evolucionando arquitecturas monolíticas a microservicios. Experiencia con múltiples bases de datos (PostgreSQL, MySQL, MS SQL Server, MongoDB) en entorno Scrum/Agile.",
+      "tags": "Spring Boot, Angular, Microservicios, PostgreSQL"
+    },
+    "tutor": {
+      "role": "Tutor de Bootcamp",
+      "company": "Campus Dual TIC",
+      "date": "Marzo 2023 - Presente",
+      "description": "Tutor en bootcamp de desarrollo con experiencia en framework Ontimize y metodología Scrum.",
+      "tags": "Ontimize, Scrum"
+    },
+    "rockbotic": {
+      "role": "Tutor",
+      "company": "Rockbotic",
+      "date": "Enero 2018 - Mayo 2018",
+      "description": "Enseñanza de programación, robótica y diseño 3D a estudiantes de primaria.",
+      "tags": "Programación, Robótica"
+    },
+    "support1": {
+      "role": "Interno de Soporte",
+      "company": "Universidade de Vigo",
+      "date": "Noviembre 2015 - Octubre 2016"
+    },
+    "support2": {
+      "role": "Interno de Soporte",
+      "company": "Universidade de Vigo",
+      "date": "Octubre 2013 - Septiembre 2014"
+    }
+  },
+  "education": {
+    "title": "Educación",
+    "degree1": {
+      "title": "Grado en Ingeniería Informática",
+      "place": "Universidade de Vigo",
+      "date": "Septiembre 2012 - Julho 2017",
+      "specialization": "Ingeniería de Software, Tecnologías de la Información"
+    },
+    "degree2": {
+      "title": "Técnico Superior en Desarrollo de Aplicaciones Informáticas",
+      "place": "I.E.S San Clemente",
+      "date": "Septiembre 2010 - Junho 2012"
+    },
+    "degree3": {
+      "title": "Técnico en Explotación de Sistemas Informáticos",
+      "place": "I.E.S Maximino Romero de Lema",
+      "date": "Septiembre 2007 - Junho 2009"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "backend": "Backend",
+    "database": "Bases de Datos",
+    "devops": "DevOps & Tools",
+    "testing": "Testing",
+    "frontend": "Frontend"
+  },
+  "courses": {
+    "title": "Cursos",
+    "course1": "Curso Completo de Prompt Engineering para IA Generativa A-Z",
+    "course2": "Clean Architecture for Beginners: A Practical Guide",
+    "course3": "Clean Code",
+    "course4": "ChatGPT para profesionales: aprovecha la IA generativa en el trabajo",
+    "course5": "Master Redux from scratch with Redux core, Redux-toolkit, react-redux library",
+    "course6": "Bootcamp Product Owner",
+    "course7": "Angular - The Complete Guide (2022 Edition)",
+    "course8": "Testing Spring Boot: Beginner to Guru"
+  },
+  "certificates": {
+    "title": "Certificados",
+    "azure1": "Azure Data Fundamentals",
+    "azure2": "Azure AI Fundamentals",
+    "ibm1": "Data Usability",
+    "ibm2": "Cybersecurity Fundamentals",
+    "meta": "Certified Digital Marketing Associate",
+    "pearson": "IT Specialist - Python"
+  },
+  "languages": {
+    "title": "Idiomas",
+    "spanish": "Español",
+    "galician": "Gallego",
+    "english": "Inglés",
+    "native": "Nativo",
+    "toeic": "TOEIC B1"
+  },
+  "pdf": {
+    "professionalSummary": "Resumen Profesional",
+    "technicalSkills": "Habilidades Técnicas",
+    "professionalExperience": "Experiencia Profesional",
+    "educationSection": "Educación",
+    "certificationsSection": "Certificados",
+    "coursesSection": "Cursos de Desarrollo Profesional",
+    "languagesSection": "Idiomas"
+  }
 }

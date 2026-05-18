@@ -1,29 +1,31 @@
 import { motion } from "framer-motion";
 import { Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal";
 
-const languages = [
-  {
-    name: "Español",
-    level: "Nativo",
-    percentage: 100,
-    flag: "🇪🇸",
-  },
-  {
-    name: "Gallego",
-    level: "Nativo",
-    percentage: 100,
-    flag: "🏴",
-  },
-  {
-    name: "Inglés",
-    level: "TOEIC B1",
-    percentage: 75,
-    flag: "🇬🇧",
-  },
-];
-
 const Languages = () => {
+  const { t } = useTranslation();
+
+  const languages = [
+    {
+      name: t("languages.spanish"),
+      level: t("languages.native"),
+      percentage: 100,
+      flag: "🇪🇸",
+    },
+    {
+      name: t("languages.galician"),
+      level: t("languages.native"),
+      percentage: 100,
+      flag: "🏴",
+    },
+    {
+      name: t("languages.english"),
+      level: t("languages.toeic"),
+      percentage: 75,
+      flag: "🇬🇧",
+    },
+  ];
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -57,7 +59,7 @@ const Languages = () => {
         transition={{ duration: 0.5 }}
         className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent flex items-center gap-3"
       >
-        <Globe size={32} /> Idiomas
+        <Globe size={32} /> {t("languages.title")}
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

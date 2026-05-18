@@ -1,49 +1,46 @@
 import { motion } from "framer-motion";
 import { Calendar, Building2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal";
 
-const experiences = [
-  {
-    role: "Desarrollador Full Stack",
-    company: "Imatia",
-    date: "Junio 2018 - Presente",
-    description:
-      "Responsable de diseñar, desarrollar e implementar aplicaciones web utilizando Spring Boot y Angular. Participé en la migración de aplicaciones monolíticas a microservicios, mejorando la escalabilidad y mantenibilidad del sistema. Trabajé con bases de datos relacionales (PostgreSQL, MySQL, MS SQL Server) y no relacionales (MongoDB). Contribuí activamente en equipos ágiles siguiendo el marco de trabajo Scrum.",
-    tags: ["Spring Boot", "Angular", "PostgreSQL", "Microservicios"],
-  },
-  {
-    role: "Bootcamp Tutor",
-    company: "Campus Dual TIC",
-    date: "Marzo 2023 - Presente",
-    description:
-      "Responsable de liderar, supervisar y apoyar a grupos de estudiantes en el desarrollo de aplicaciones utilizando Ontimize. Facilité el aprendizaje práctico en entornos colaborativos aplicando la metodología ágil Scrum.",
-    tags: ["Ontimize", "Scrum", "Mentoría"],
-  },
-  {
-    role: "Tutor",
-    company: "Rockbotic",
-    date: "Enero 2018 - Mayo 2018",
-    description:
-      "Responsable de impartir clases extraescolares de programación, robótica y diseño 3D a niños de primaria, desarrollando actividades educativas que fomentan la creatividad y el pensamiento lógico.",
-    tags: ["Programación", "Robótica", "Educación"],
-  },
-  {
-    role: "Becario de Soporte",
-    company: "Universidade de Vigo",
-    date: "Noviembre 2015 - Octubre 2016",
-    description: "Soporte a alumnos y profesorado de la facultad de ciencias de la educación de Ourense.",
-    tags: ["Soporte Técnico"],
-  },
-  {
-    role: "Becario de Soporte",
-    company: "Universidade de Vigo",
-    date: "Octubre 2013 - Septiembre 2014",
-    description: "Soporte a alumnos y profesorado de la facultad de ingeniería informática de Ourense.",
-    tags: ["Soporte Técnico"],
-  },
-];
-
 const Experience = () => {
+  const { t } = useTranslation();
+
+  const experiences = [
+    {
+      role: t("experience.fullstack.role"),
+      company: t("experience.fullstack.company"),
+      date: t("experience.fullstack.date"),
+      description: t("experience.fullstack.description"),
+      tags: ["Spring Boot", "Angular", "PostgreSQL", "Microservicios"],
+    },
+    {
+      role: t("experience.tutor.role"),
+      company: t("experience.tutor.company"),
+      date: t("experience.tutor.date"),
+      description: t("experience.tutor.description"),
+      tags: ["Ontimize", "Scrum", "Mentoría"],
+    },
+    {
+      role: t("experience.rockbotic.role"),
+      company: t("experience.rockbotic.company"),
+      date: t("experience.rockbotic.date"),
+      description: t("experience.rockbotic.description"),
+      tags: ["Programación", "Robótica", "Educación"],
+    },
+    {
+      role: t("experience.support1.role"),
+      company: t("experience.support1.company"),
+      date: t("experience.support1.date"),
+      tags: ["Soporte Técnico"],
+    },
+    {
+      role: t("experience.support2.role"),
+      company: t("experience.support2.company"),
+      date: t("experience.support2.date"),
+      tags: ["Soporte Técnico"],
+    },
+  ];
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -77,7 +74,7 @@ const Experience = () => {
         transition={{ duration: 0.5 }}
         className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
       >
-        Experiencia
+        {t("experience.title")}
       </motion.h2>
 
       <div className="space-y-8">

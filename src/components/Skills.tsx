@@ -1,40 +1,42 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal";
 
-const skillsData = [
-  {
-    category: "Backend",
-    skills: ["Java", "Spring Boot", "Microservices", "REST APIs"],
-    color: "from-blue-400 to-blue-600",
-    badgeColor: "bg-blue-600 text-white",
-  },
-  {
-    category: "Bases de Datos",
-    skills: ["SQL", "PostgreSQL", "MySQL", "MongoDB"],
-    color: "from-purple-400 to-purple-600",
-    badgeColor: "bg-purple-600 text-white",
-  },
-  {
-    category: "DevOps & Tools",
-    skills: ["Docker", "CI/CD", "Git", "Maven"],
-    color: "from-pink-400 to-pink-600",
-    badgeColor: "bg-pink-600 text-white",
-  },
-  {
-    category: "Testing",
-    skills: ["JUnit", "Mockito", "TDD", "Integration Testing"],
-    color: "from-green-400 to-green-600",
-    badgeColor: "bg-green-600 text-white",
-  },
-  {
-    category: "Frontend",
-    skills: ["Angular", "React", "TypeScript", "Tailwind CSS"],
-    color: "from-orange-400 to-orange-600",
-    badgeColor: "bg-orange-600 text-white",
-  },
-];
-
 export default function Skills() {
+  const { t } = useTranslation();
+
+  const skillsData = [
+    {
+      category: t("skills.backend"),
+      skills: ["Java", "Spring Boot", "Microservices", "REST APIs"],
+      color: "from-blue-400 to-blue-600",
+      badgeColor: "bg-blue-600 text-white",
+    },
+    {
+      category: t("skills.database"),
+      skills: ["SQL", "PostgreSQL", "MySQL", "MongoDB"],
+      color: "from-purple-400 to-purple-600",
+      badgeColor: "bg-purple-600 text-white",
+    },
+    {
+      category: t("skills.devops"),
+      skills: ["Docker", "CI/CD", "Git", "Maven"],
+      color: "from-pink-400 to-pink-600",
+      badgeColor: "bg-pink-600 text-white",
+    },
+    {
+      category: t("skills.testing"),
+      skills: ["JUnit", "Mockito", "TDD", "Integration Testing"],
+      color: "from-green-400 to-green-600",
+      badgeColor: "bg-green-600 text-white",
+    },
+    {
+      category: t("skills.frontend"),
+      skills: ["Angular", "React", "TypeScript", "Tailwind CSS"],
+      color: "from-orange-400 to-orange-600",
+      badgeColor: "bg-orange-600 text-white",
+    },
+  ];
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -77,7 +79,7 @@ export default function Skills() {
         transition={{ duration: 0.5 }}
         className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
       >
-        Skills
+        {t("skills.title")}
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

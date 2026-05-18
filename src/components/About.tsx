@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal";
 
 const About = () => {
+  const { t } = useTranslation();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -22,11 +25,11 @@ const About = () => {
   };
 
   const paragraphs = [
-    "Soy ingeniero de software con más de 7 años de experiencia trabajando principalmente en backend con Java y Spring Boot, desarrollando APIs y evolucionando aplicaciones hacia arquitecturas de microservicios.",
-    "A lo largo de mi carrera he participado en proyectos tanto internos como para clientes internacionales, lo que me ha permitido trabajar en entornos colaborativos, con metodologías ágiles y con un enfoque claro en la calidad del software, el testing y las buenas prácticas.",
-    "En los últimos años también he asumido un rol más activo dentro de los equipos, apoyando a otros desarrolladores, revisando código y ayudando en la toma de decisiones técnicas, además de mi experiencia como tutor en bootcamps, donde he acompañado a perfiles junior en su crecimiento profesional.",
-    "Me interesa especialmente seguir evolucionando hacia roles con mayor impacto en producto y arquitectura, donde pueda no solo desarrollar soluciones, sino también participar en su diseño, escalabilidad y mejora continua.",
-    "Me considero una persona constante, con mentalidad analítica y orientada a equipo, que disfruta entendiendo los problemas en profundidad y buscando soluciones simples, mantenibles y de calidad.",
+    t("about.p1"),
+    t("about.p2"),
+    t("about.p3"),
+    t("about.p4"),
+    t("about.p5"),
   ];
 
   return (
@@ -43,7 +46,7 @@ const About = () => {
         transition={{ duration: 0.5 }}
         className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
       >
-        Sobre mí
+        {t("about.title")}
       </motion.h2>
 
       <div className="space-y-6">

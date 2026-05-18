@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { Code2, Mail, Menu, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import ScrollProgressBar from "./ScrollProgressBar";
 import GitHubIcon from "../assets/icons/github.svg";
 import LinkedInIcon from "../assets/icons/linkedin.svg";
+import LanguageSwitcher from "./LanguageSwitcher";
 import html2pdf from "html2pdf.js";
 
 interface HeaderProps {
@@ -11,6 +13,7 @@ interface HeaderProps {
 }
 
 const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
+  const { t } = useTranslation();
   const downloadCV = () => {
     // Get the cv-print element
     const element = document.getElementById("cv-print");
@@ -59,7 +62,7 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
             <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               César.dev
             </h1>
-            <p className="text-xs text-gray-400">Software Engineer</p>
+            <p className="text-xs text-gray-400">{t('header.softwareEngineer')}</p>
           </div>
         </motion.div>
 
@@ -101,13 +104,15 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
               <Mail size={18} />
             </motion.a>
 
+            <LanguageSwitcher />
+
             <motion.button
               onClick={downloadCV}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="ml-2 px-4 py-1.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-sm font-semibold hover:shadow-lg transition-shadow"
             >
-              Descargar CV
+              {t('header.downloadCV')}
             </motion.button>
           </div>
 

@@ -1,10 +1,25 @@
-import i18n from '../i18n'
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
-export default function LanguageSwitcher() {
+const LanguageSwitcher = () => {
+  const { i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === "es" ? "en" : "es";
+    i18n.changeLanguage(newLang);
+  };
+
   return (
-    <div className="lang-switch">
-      <button onClick={() => i18n.changeLanguage('en')}>EN</button>
-      <button onClick={() => i18n.changeLanguage('es')}>ES</button>
-    </div>
-  )
-}
+    <motion.button
+      onClick={toggleLanguage}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="px-3 py-1.5 bg-gray-700 hover:bg-gray-600 text-white rounded-lg text-sm font-semibold transition-colors"
+      title={`Switch to ${i18n.language === "es" ? "English" : "Español"}`}
+    >
+      {i18n.language.toUpperCase()}
+    </motion.button>
+  );
+};
+
+export default LanguageSwitcher;

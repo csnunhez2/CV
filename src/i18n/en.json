@@ -1,11 +1,123 @@
 {
-  "title": "Senior Backend Engineer",
-  "subtitle": "Java | Microservices | Cloud",
-  "aboutTitle": "About Me",
-  "aboutText": "Backend Engineer specialized in Java and microservices.",
-  "skillsTitle": "Skills",
-  "experienceTitle": "Experience",
-  "contactTitle": "Contact",
-  "exp1": "Worked on backend systems and migrated monolith to microservices.",
-  "exp2": "Mentored developers and reviewed code."
+  "header": {
+    "softwareEngineer": "Software Engineer",
+    "downloadCV": "Download CV"
+  },
+  "sidebar": {
+    "about": "About Me",
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "courses": "Courses",
+    "certificates": "Certificates",
+    "languages": "Languages",
+    "copyright": "© 2024 - César.dev"
+  },
+  "about": {
+    "title": "About Me",
+    "p1": "Software engineer with more than 7 years of experience working mainly in backend with Java and Spring Boot, developing APIs and evolving applications towards microservices architectures.",
+    "p2": "Throughout my career I have participated in internal and client projects for international clients, which has allowed me to work in collaborative environments, with agile methodologies and with a clear focus on software quality, testing and best practices.",
+    "p3": "In recent years I have also taken a more active role within teams, supporting other developers, reviewing code and helping in technical decision making, in addition to my experience as a tutor in bootcamps, where I have accompanied junior profiles in their professional growth.",
+    "p4": "I am particularly interested in continuing to evolve towards roles with greater impact on product and architecture, where I can not only develop solutions, but also participate in their design, scalability and continuous improvement.",
+    "p5": "I consider myself a consistent person, with an analytical mindset and team-oriented, who enjoys understanding problems in depth and seeking simple, maintainable and quality solutions.",
+    "tags": "Java, Spring Boot, Microservices, Backend, Testing"
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "fullstack": {
+      "role": "Full Stack Developer",
+      "company": "Imatia",
+      "date": "June 2018 - Present",
+      "description": "I developed applications with Spring Boot, evolving monolithic architectures to microservices. Experience with multiple databases (PostgreSQL, MySQL, MS SQL Server, MongoDB) in a Scrum/Agile environment.",
+      "tags": "Spring Boot, Angular, Microservices, PostgreSQL"
+    },
+    "tutor": {
+      "role": "Bootcamp Tutor",
+      "company": "Campus Dual TIC",
+      "date": "March 2023 - Present",
+      "description": "Tutor in development bootcamp with experience in Ontimize framework and Scrum methodology.",
+      "tags": "Ontimize, Scrum"
+    },
+    "rockbotic": {
+      "role": "Tutor",
+      "company": "Rockbotic",
+      "date": "January 2018 - May 2018",
+      "description": "Teaching programming, robotics and 3D design to primary school children.",
+      "tags": "Programming, Robotics"
+    },
+    "support1": {
+      "role": "Support Intern",
+      "company": "Universidade de Vigo",
+      "date": "November 2015 - October 2016"
+    },
+    "support2": {
+      "role": "Support Intern",
+      "company": "Universidade de Vigo",
+      "date": "October 2013 - September 2014"
+    }
+  },
+  "education": {
+    "title": "Education",
+    "degree1": {
+      "title": "Bachelor's Degree in Computer Engineering",
+      "place": "Universidade de Vigo",
+      "date": "September 2012 - July 2017",
+      "specialization": "Software Engineering, Information Technologies"
+    },
+    "degree2": {
+      "title": "Higher Technician in Computer Application Development",
+      "place": "I.E.S San Clemente",
+      "date": "September 2010 - June 2012"
+    },
+    "degree3": {
+      "title": "Technician in Computer Systems Exploitation",
+      "place": "I.E.S Maximino Romero de Lema",
+      "date": "September 2007 - June 2009"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "backend": "Backend",
+    "database": "Databases",
+    "devops": "DevOps & Tools",
+    "testing": "Testing",
+    "frontend": "Frontend"
+  },
+  "courses": {
+    "title": "Courses",
+    "course1": "Complete Course on Prompt Engineering for Generative AI A-Z",
+    "course2": "Clean Architecture for Beginners: A Practical Guide",
+    "course3": "Clean Code",
+    "course4": "ChatGPT for Professionals: Leverage Generative AI at Work",
+    "course5": "Master Redux from scratch with Redux core, Redux-toolkit, react-redux library",
+    "course6": "Product Owner Bootcamp",
+    "course7": "Angular - The Complete Guide (2022 Edition)",
+    "course8": "Testing Spring Boot: Beginner to Guru"
+  },
+  "certificates": {
+    "title": "Certifications",
+    "azure1": "Azure Data Fundamentals",
+    "azure2": "Azure AI Fundamentals",
+    "ibm1": "Data Usability",
+    "ibm2": "Cybersecurity Fundamentals",
+    "meta": "Certified Digital Marketing Associate",
+    "pearson": "IT Specialist - Python"
+  },
+  "languages": {
+    "title": "Languages",
+    "spanish": "Spanish",
+    "galician": "Galician",
+    "english": "English",
+    "native": "Native",
+    "toeic": "TOEIC B1"
+  },
+  "pdf": {
+    "professionalSummary": "Professional Summary",
+    "technicalSkills": "Technical Skills",
+    "professionalExperience": "Professional Experience",
+    "educationSection": "Education",
+    "certificationsSection": "Certifications",
+    "coursesSection": "Professional Development Courses",
+    "languagesSection": "Languages"
+  }
 }
