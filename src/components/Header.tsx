@@ -74,9 +74,9 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
               href="https://github.com/csnunhez2"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors shadow-md"
+              whileHover={{ scale: 1.15, y: -4 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-9 h-9 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 hover:from-blue-600 hover:to-blue-700 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
               title="GitHub"
             >
               <img src={GitHubIcon} alt="GitHub" className="w-5 h-5 invert" />
@@ -86,9 +86,9 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
               href="https://www.linkedin.com/in/csnunhez/"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors shadow-md"
+              whileHover={{ scale: 1.15, y: -4 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-9 h-9 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 hover:from-purple-600 hover:to-purple-700 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
               title="LinkedIn"
             >
               <img src={LinkedInIcon} alt="LinkedIn" className="w-5 h-5 invert" />
@@ -96,9 +96,9 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
 
             <motion.a
               href="mailto:cesar.santiago.nunhez@gmail.com"
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors shadow-md"
+              whileHover={{ scale: 1.15, y: -4 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-9 h-9 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 hover:from-pink-600 hover:to-pink-700 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
               title="Email"
             >
               <Mail size={18} />
@@ -108,9 +108,9 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
 
             <motion.button
               onClick={downloadCV}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.08, y: -3 }}
               whileTap={{ scale: 0.95 }}
-              className="ml-2 px-4 py-1.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-sm font-semibold hover:shadow-lg transition-shadow"
+              className="ml-2 px-4 py-1.5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-lg text-sm font-semibold hover:shadow-2xl transition-all duration-300 hover:from-blue-500 hover:via-purple-500 hover:to-pink-500"
             >
               {t('header.downloadCV')}
             </motion.button>

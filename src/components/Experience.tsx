@@ -66,13 +66,13 @@ const Experience = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-lg border border-blue-100"
+      className="card"
     >
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+        className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%]"
       >
         {t("experience.title")}
       </motion.h2>
@@ -117,7 +117,7 @@ const Experience = () => {
                   <motion.span
                     key={idx}
                     whileHover={{ scale: 1.05 }}
-                    className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default"
+                    className="px-3 py-1 bg-white/60 backdrop-blur-md text-blue-700 rounded-full text-xs font-medium hover:shadow-md transition-all duration-300 border border-white/40 cursor-default"
                   >
                     {tag}
                   </motion.span>

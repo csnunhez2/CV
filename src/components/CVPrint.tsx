@@ -4,78 +4,78 @@ const CVPrint = () => {
   const { t } = useTranslation();
   const experienceData = [
     {
-      role: "Full Stack Developer",
-      company: "Imatia",
-      date: "June 2018 - Present",
-      description: "Desarrollé aplicaciones con Spring Boot, evolucionando arquitecturas monolíticas a microservicios. Experiencia con múltiples bases de datos (PostgreSQL, MySQL, MS SQL Server, MongoDB) en entorno Scrum/Agile.",
+      role: t("experience.fullstack.role"),
+      company: t("experience.fullstack.company"),
+      date: t("experience.fullstack.date"),
+      description: t("experience.fullstack.description"),
       tags: ["Spring Boot", "Angular", "Microservicios", "PostgreSQL"],
     },
     {
-      role: "Bootcamp Tutor",
-      company: "Campus Dual TIC",
-      date: "March 2023 - Present",
-      description: "Tutor en bootcamp de desarrollo con experiencia en framework Ontimize y metodología Scrum.",
+      role: t("experience.tutor.role"),
+      company: t("experience.tutor.company"),
+      date: t("experience.tutor.date"),
+      description: t("experience.tutor.description"),
       tags: ["Ontimize", "Scrum"],
     },
     {
-      role: "Tutor",
-      company: "Rockbotic",
-      date: "January 2018 - May 2018",
-      description: "Enseñanza de programación, robótica y diseño 3D a estudiantes de primaria.",
+      role: t("experience.rockbotic.role"),
+      company: t("experience.rockbotic.company"),
+      date: t("experience.rockbotic.date"),
+      description: t("experience.rockbotic.description"),
       tags: ["Programación", "Robótica"],
     },
   ];
 
   const educationData = [
     {
-      title: "Grado en Ingeniería Informática",
-      place: "Universidade de Vigo",
-      date: "September 2012 - July 2017",
-      specialization: "Software Engineering, Information Technologies",
+      title: t("education.degree1.title"),
+      place: t("education.degree1.place"),
+      date: t("education.degree1.date"),
+      specialization: t("education.degree1.specialization"),
     },
     {
-      title: "Técnico Superior en Desarrollo de Aplicaciones Informáticas",
-      place: "I.E.S San Clemente",
-      date: "September 2010 - June 2012",
+      title: t("education.degree2.title"),
+      place: t("education.degree2.place"),
+      date: t("education.degree2.date"),
     },
     {
-      title: "Técnico en Explotación de Sistemas Informáticos",
-      place: "I.E.S Maximino Romero de Lema",
-      date: "September 2007 - June 2009",
+      title: t("education.degree3.title"),
+      place: t("education.degree3.place"),
+      date: t("education.degree3.date"),
     },
   ];
 
   const skillsData = [
-    { category: "Backend", skills: ["Java", "Spring Boot", "Microservicios", "REST APIs"] },
-    { category: "Bases de Datos", skills: ["SQL", "PostgreSQL", "MySQL", "MongoDB"] },
-    { category: "DevOps & Tools", skills: ["Docker", "CI/CD", "Git", "Maven"] },
-    { category: "Testing", skills: ["JUnit", "Mockito", "TDD", "Integration Testing"] },
-    { category: "Frontend", skills: ["Angular", "React", "TypeScript", "Tailwind CSS"] },
+    { category: t("skills.backend"), skills: ["Java", "Spring Boot", "Microservices", "REST APIs"] },
+    { category: t("skills.database"), skills: ["SQL", "PostgreSQL", "MySQL", "MongoDB"] },
+    { category: t("skills.devops"), skills: ["Docker", "CI/CD", "Git", "Maven"] },
+    { category: t("skills.testing"), skills: ["JUnit", "Mockito", "TDD", "Integration Testing"] },
+    { category: t("skills.frontend"), skills: ["Angular", "React", "TypeScript", "Tailwind CSS"] },
   ];
 
   const certificatesData = [
-    { title: "Azure Data Fundamentals", issuer: "Microsoft", date: "April 2026" },
-    { title: "Azure AI Fundamentals", issuer: "Microsoft", date: "April 2026" },
-    { title: "Data Usability", issuer: "IBM", date: "February 2026" },
-    { title: "Certified Digital Marketing Associate", issuer: "Meta", date: "April 2026" },
-    { title: "IT Specialist - Python", issuer: "Pearson", date: "April 2026" },
+    { title: t("certificates.azure1"), issuer: "Microsoft", date: "April 2026" },
+    { title: t("certificates.azure2"), issuer: "Microsoft", date: "April 2026" },
+    { title: t("certificates.ibm1"), issuer: "IBM", date: "February 2026" },
+    { title: t("certificates.meta"), issuer: "Meta", date: "April 2026" },
+    { title: t("certificates.pearson"), issuer: "Pearson", date: "April 2026" },
   ];
 
   const coursesData = [
-    { title: "Curso Completo de Prompt Engineering para IA Generativa A-Z", platform: "Udemy", date: "Marzo 2026" },
-    { title: "Clean Architecture for Beginners: A Practical Guide", platform: "Udemy", date: "Noviembre 2025" },
-    { title: "Clean Code", platform: "Udemy", date: "Octubre 2025" },
-    { title: "ChatGPT para profesionales: aprovecha la IA generativa en el trabajo", platform: "TrainingIT", date: "Marzo 2025" },
-    { title: "Master Redux from scratch with Redux core, Redux-toolkit, react-redux library", platform: "Udemy", date: "Julio 2024" },
-    { title: "Bootcamp Product Owner", platform: "Campus Dual TIC", date: "Noviembre 2023" },
-    { title: "Angular - The Complete Guide (2022 Edition)", platform: "Udemy", date: "Junio 2022" },
-    { title: "Testing Spring Boot: Beginner to Guru", platform: "Udemy", date: "Mayo 2020" },
+    { title: t("courses.course1"), platform: "Udemy", date: "March 2026" },
+    { title: t("courses.course2"), platform: "Udemy", date: "November 2025" },
+    { title: t("courses.course3"), platform: "Udemy", date: "October 2025" },
+    { title: t("courses.course4"), platform: "TrainingIT", date: "March 2025" },
+    { title: t("courses.course5"), platform: "Udemy", date: "July 2024" },
+    { title: t("courses.course6"), platform: "Campus Dual TIC", date: "November 2023" },
+    { title: t("courses.course7"), platform: "Udemy", date: "June 2022" },
+    { title: t("courses.course8"), platform: "Udemy", date: "May 2020" },
   ];
 
   const languagesData = [
-    { name: "Español", level: "Native" },
-    { name: "Gallego", level: "Native" },
-    { name: "Inglés", level: "TOEIC B1" },
+    { name: t("languages.spanish"), level: t("languages.native") },
+    { name: t("languages.galician"), level: t("languages.native") },
+    { name: t("languages.english"), level: t("languages.toeic") },
   ];
 
   return (
@@ -129,7 +129,7 @@ const CVPrint = () => {
 
       {/* Education */}
       <div style={styles.section}>
-        <h2 style={styles.sectionTitle}>EDUCATION</h2>
+        <h2 style={styles.sectionTitle}>{t('pdf.educationSection').toUpperCase()}</h2>
         {educationData.map((edu, idx) => (
           <div key={idx} style={styles.education}>
             <div style={styles.educationHeader}>
@@ -145,7 +145,7 @@ const CVPrint = () => {
 
       {/* Certifications */}
       <div style={styles.section}>
-        <h2 style={styles.sectionTitle}>CERTIFICATIONS</h2>
+        <h2 style={styles.sectionTitle}>{t('pdf.certificationsSection').toUpperCase()}</h2>
         {certificatesData.map((cert, idx) => (
           <div key={idx} style={styles.certification}>
             <div style={styles.certHeader}>
@@ -159,7 +159,7 @@ const CVPrint = () => {
 
       {/* Courses */}
       <div style={styles.section}>
-        <h2 style={styles.sectionTitle}>PROFESSIONAL DEVELOPMENT COURSES</h2>
+        <h2 style={styles.sectionTitle}>{t('pdf.coursesSection').toUpperCase()}</h2>
         {coursesData.map((course, idx) => (
           <div key={idx} style={styles.course}>
             <div style={styles.courseHeader}>
@@ -173,7 +173,7 @@ const CVPrint = () => {
 
       {/* Languages */}
       <div style={styles.section}>
-        <h2 style={styles.sectionTitle}>LANGUAGES</h2>
+        <h2 style={styles.sectionTitle}>{t('pdf.languagesSection').toUpperCase()}</h2>
         <div style={styles.languagesContainer}>
           {languagesData.map((lang, idx) => (
             <div key={idx} style={styles.language}>
@@ -190,9 +190,9 @@ const styles: Record<string, React.CSSProperties> = {
   container: {
     fontFamily: "Segoe UI, Tahoma, Geneva, Verdana, sans-serif",
     color: "#1a1a1a",
-    fontSize: "11px",
-    lineHeight: "1.5",
-    padding: "20px",
+    fontSize: "10.5px",
+    lineHeight: "1.65",
+    padding: "8px 10px 2px 10px",
     maxWidth: "210mm",
     margin: "0 auto",
     backgroundColor: "#ffffff",
@@ -200,115 +200,115 @@ const styles: Record<string, React.CSSProperties> = {
   header: {
     display: "flex",
     justifyContent: "space-between",
-    borderBottom: "3px solid #3b82f6",
-    paddingBottom: "15px",
-    marginBottom: "15px",
+    borderBottom: "2px solid #3b82f6",
+    paddingBottom: "12px",
+    marginBottom: "12px",
   },
   name: {
-    fontSize: "24px",
+    fontSize: "21px",
     fontWeight: "bold",
     color: "#1e40af",
-    margin: "0 0 5px 0",
+    margin: "0 0 4px 0",
   },
   title: {
-    fontSize: "14px",
+    fontSize: "12px",
     color: "#6366f1",
     margin: "0",
     fontWeight: "500",
   },
   contact: {
     textAlign: "right",
-    fontSize: "10px",
+    fontSize: "9px",
   },
   section: {
-    marginBottom: "15px",
+    marginBottom: "11px",
   },
   sectionTitle: {
-    fontSize: "13px",
+    fontSize: "12px",
     fontWeight: "bold",
     color: "#1e40af",
     borderBottom: "1px solid #e5e7eb",
-    paddingBottom: "8px",
-    marginBottom: "10px",
+    paddingBottom: "6px",
+    marginBottom: "9px",
     textTransform: "uppercase",
   },
   paragraph: {
     margin: "0 0 10px 0",
-    lineHeight: "1.6",
+    lineHeight: "1.65",
   },
   skillGroup: {
     marginBottom: "5px",
   },
   skillCategory: {
     margin: "0",
-    fontSize: "11px",
+    fontSize: "10px",
   },
   experience: {
-    marginBottom: "10px",
+    marginBottom: "9px",
   },
   experienceHeader: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "baseline",
-    marginBottom: "3px",
+    marginBottom: "4px",
   },
   jobTitle: {
-    fontSize: "12px",
+    fontSize: "11px",
     fontWeight: "bold",
     color: "#1e40af",
     margin: "0",
   },
   company: {
-    fontSize: "11px",
+    fontSize: "10px",
     color: "#6366f1",
     fontWeight: "500",
     margin: "3px 0",
   },
   description: {
     fontSize: "10px",
-    margin: "3px 0",
-    lineHeight: "1.5",
+    margin: "4px 0",
+    lineHeight: "1.55",
   },
   date: {
-    fontSize: "10px",
+    fontSize: "9px",
     color: "#666",
     whiteSpace: "nowrap",
-    marginLeft: "10px",
+    marginLeft: "5px",
   },
   divider: {
     height: "1px",
     backgroundColor: "#e5e7eb",
-    margin: "8px 0",
+    margin: "6px 0",
   },
   education: {
-    marginBottom: "10px",
+    marginBottom: "9px",
   },
   educationHeader: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "baseline",
-    marginBottom: "3px",
+    marginBottom: "4px",
   },
   degree: {
-    fontSize: "12px",
+    fontSize: "11px",
     fontWeight: "bold",
     color: "#1e40af",
     margin: "0",
   },
   institution: {
-    fontSize: "11px",
+    fontSize: "10px",
     color: "#6366f1",
     fontWeight: "500",
     margin: "3px 0",
   },
   specialization: {
-    fontSize: "10px",
+    fontSize: "9px",
     color: "#666",
-    margin: "2px 0",
+    margin: "3px 0",
     fontStyle: "italic",
   },
   certification: {
-    marginBottom: "6px",
+    marginBottom: "5px",
   },
   certHeader: {
     display: "flex",
@@ -317,13 +317,13 @@ const styles: Record<string, React.CSSProperties> = {
     marginBottom: "2px",
   },
   certTitle: {
-    fontSize: "11px",
+    fontSize: "10px",
     fontWeight: "500",
     color: "#1a1a1a",
     margin: "0",
   },
   certIssuer: {
-    fontSize: "10px",
+    fontSize: "9px",
     color: "#666",
     margin: "0",
   },
@@ -334,15 +334,15 @@ const styles: Record<string, React.CSSProperties> = {
   },
   language: {
     backgroundColor: "#f0f4f8",
-    padding: "8px 12px",
+    padding: "8px 10px",
     borderRadius: "4px",
   },
   languageName: {
-    fontSize: "11px",
+    fontSize: "10px",
     margin: "0",
   },
   course: {
-    marginBottom: "6px",
+    marginBottom: "5px",
   },
   courseHeader: {
     display: "flex",
@@ -351,13 +351,13 @@ const styles: Record<string, React.CSSProperties> = {
     marginBottom: "2px",
   },
   courseTitle: {
-    fontSize: "11px",
+    fontSize: "10px",
     fontWeight: "500",
     color: "#1a1a1a",
     margin: "0",
   },
   coursePlatform: {
-    fontSize: "10px",
+    fontSize: "9px",
     color: "#666",
     margin: "0",
   },

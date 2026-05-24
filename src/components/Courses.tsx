@@ -80,13 +80,13 @@ const Courses = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-lg border border-blue-100"
+      className="card"
     >
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent flex items-center gap-3"
+        className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%] flex items-center gap-3"
       >
         <BookOpen size={32} /> {t("courses.title")}
       </motion.h2>
@@ -100,7 +100,7 @@ const Courses = () => {
             rel="noopener noreferrer"
             variants={itemVariants}
             whileHover={{ y: -4, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
-            className="group p-5 border border-gray-200 rounded-xl bg-white hover:border-blue-300 transition-all cursor-pointer"
+            className="group p-5 border border-white/40 rounded-xl bg-white/60 backdrop-blur-lg hover:shadow-lg transition-all duration-300 hover:scale-[1.02] hover:bg-white/80 cursor-pointer"
           >
             <div className="flex items-start gap-3">
               <div className="flex-shrink-0 mt-1">

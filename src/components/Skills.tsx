@@ -71,13 +71,13 @@ export default function Skills() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-lg border border-blue-100"
+      className="card"
     >
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+        className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%]"
       >
         {t("skills.title")}
       </motion.h2>
@@ -87,7 +87,7 @@ export default function Skills() {
           <motion.div
             key={catIdx}
             variants={categoryVariants}
-            className={`p-6 rounded-xl bg-gradient-to-br ${category.color} bg-opacity-10 border border-gray-200 hover:shadow-lg transition-shadow`}
+            className={`p-6 rounded-xl bg-gradient-to-br ${category.color} bg-opacity-10 border border-white/40 hover:shadow-lg transition-all duration-300 backdrop-blur-md`}
           >
             <div className={`inline-block ${category.badgeColor} px-4 py-2 rounded-lg mb-4 font-bold text-lg`}>
               {category.category}
@@ -100,7 +100,7 @@ export default function Skills() {
                   variants={skillVariants}
                   whileHover={{ scale: 1.1, rotateY: 10 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`px-4 py-2 bg-gradient-to-r ${category.color} text-white rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-shadow cursor-default`}
+                  className={`px-4 py-2 bg-gradient-to-r ${category.color} text-white rounded-full text-sm font-semibold shadow-md hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-default`}
                 >
                   {skill}
                 </motion.span>

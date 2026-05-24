@@ -52,13 +52,13 @@ const Education = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-lg border border-blue-100"
+      className="card"
     >
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+        className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%]"
       >
         {t("education.title")}
       </motion.h2>
@@ -70,7 +70,7 @@ const Education = () => {
             <motion.div
               key={i}
               variants={itemVariants}
-              className="p-6 rounded-xl bg-white border border-gray-200 hover:shadow-lg hover:border-blue-300 transition-all group"
+              className="p-6 rounded-xl bg-white/60 backdrop-blur-lg border border-white/40 hover:shadow-lg hover:bg-white/70 transition-all duration-300 hover:scale-[1.02] group"
             >
               <div className="flex gap-4">
                 <motion.div

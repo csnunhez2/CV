@@ -51,13 +51,13 @@ const Languages = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-lg border border-blue-100"
+      className="card"
     >
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent flex items-center gap-3"
+        className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%] flex items-center gap-3"
       >
         <Globe size={32} /> {t("languages.title")}
       </motion.h2>
@@ -92,7 +92,7 @@ const Languages = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.5 }}
-        className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-200"
+        className="mt-8 p-6 bg-white/60 backdrop-blur-lg rounded-lg border border-white/40 hover:shadow-lg transition-shadow"
       >
         <p className="text-sm text-gray-700 text-center">
           <span className="font-semibold text-blue-600">Disponible para</span> proyectos en español, gallego e inglés

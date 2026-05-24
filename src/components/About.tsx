@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal";
+import { useViewportScroll, useTransform } from "framer-motion";
 
 const About = () => {
   const { t } = useTranslation();
+  const { scrollY } = useViewportScroll();
+  const y = useTransform(scrollY, [0, 500], [0, 50]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -38,13 +41,14 @@ const About = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-lg border border-blue-100"
+      style={{ y }}
+      className="card"
     >
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+        className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%]"
       >
         {t("about.title")}
       </motion.h2>
@@ -72,7 +76,7 @@ const About = () => {
             <motion.span
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 rounded-full text-sm font-medium hover:shadow-md transition-shadow cursor-default"
+              className="skill-pill"
             >
               {tag}
             </motion.span>

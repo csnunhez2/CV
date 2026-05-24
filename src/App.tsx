@@ -36,8 +36,25 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 flex flex-col">
-      <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 flex flex-col relative overflow-hidden">
+      {/* Animated background */}
+      <motion.div
+        className="fixed inset-0 z-0 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 opacity-50"
+        animate={{
+          backgroundPosition: ["0% 0%", "100% 100%"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
+        style={{
+          backgroundSize: "200% 200%",
+        }}
+      />
+
+      <div className="relative z-10 flex flex-col min-h-screen">
+        <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
 
       {/* Hidden CVPrint for PDF generation */}
       <div id="cv-print" style={{ display: "none" }}>
@@ -88,6 +105,8 @@ function App() {
             </AnimatePresence>
           </div>
         </main>
+      </div>
+
       </div>
     </div>
   );
