@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import CVPrint from "./components/CVPrint";
+import { useTheme } from "./contexts/ThemeContext";
 
 import About from "./components/About";
 import Experience from "./components/Experience";
@@ -15,6 +16,7 @@ import Languages from "./components/Languages";
 function App() {
   const [current, setCurrent] = useState("about");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme } = useTheme();
 
   const renderContent = () => {
     switch (current) {
@@ -36,10 +38,10 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 flex flex-col relative overflow-hidden">
+    <div className={`min-h-screen flex flex-col relative overflow-hidden transition-colors duration-300 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50'}`}>
       {/* Animated background */}
       <motion.div
-        className="fixed inset-0 z-0 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 opacity-50"
+        className={`fixed inset-0 z-0 opacity-50 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50'}`}
         animate={{
           backgroundPosition: ["0% 0%", "100% 100%"],
         }}

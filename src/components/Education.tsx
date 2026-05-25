@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { GraduationCap, Award } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal";
+import { animationPresets } from "../utils/animations";
 
 const Education = () => {
   const { t } = useTranslation();
@@ -27,37 +28,16 @@ const Education = () => {
       icon: Award,
     },
   ];
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -30 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.5 },
-    },
-  };
-
   return (
     <ScrollReveal >
       <motion.div
-      variants={containerVariants}
+      variants={animationPresets.containerStagger}
       initial="hidden"
       animate="visible"
       className="card"
     >
       <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        {...animationPresets.headingEnter}
         className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%]"
       >
         {t("education.title")}
@@ -69,31 +49,34 @@ const Education = () => {
           return (
             <motion.div
               key={i}
-              variants={itemVariants}
-              className="p-6 rounded-xl bg-white/60 backdrop-blur-lg border border-white/40 hover:shadow-lg hover:bg-white/70 transition-all duration-300 hover:scale-[1.02] group"
+              variants={animationPresets.itemSlideLeft}
+              className="p-6 rounded-xl backdrop-blur-lg hover:shadow-lg transition-all duration-300 hover:scale-[1.02] group border"
+              style={{
+                backgroundColor: 'var(--card-bg)',
+                borderColor: 'var(--card-border)',
+              }}
             >
               <div className="flex gap-4">
                 <motion.div
                   className="flex-shrink-0"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  {...animationPresets.iconTilt}
                 >
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white shadow-md">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 dark:from-blue-600 dark:to-purple-700 flex items-center justify-center text-white shadow-md">
                     <Icon size={24} />
                   </div>
                 </motion.div>
 
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-lg font-bold text-heading group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {edu.title}
                   </h3>
 
-                  <p className="text-sm font-medium text-gray-600 mt-1">{edu.place}</p>
+                  <p className="text-sm font-medium text-secondary mt-1">{edu.place}</p>
 
-                  <p className="text-xs text-gray-500 mt-1">{edu.date}</p>
+                  <p className="text-xs text-tertiary mt-1">{edu.date}</p>
 
                   {edu.description && (
-                    <p className="mt-3 text-gray-700 text-sm leading-relaxed whitespace-pre-line">
+                    <p className="mt-3 text-main text-sm leading-relaxed whitespace-pre-line">
                       {edu.description}
                     </p>
                   )}

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal";
+import { animationPresets } from "../utils/animations";
 
 export default function Skills() {
   const { t } = useTranslation();
@@ -37,46 +38,16 @@ export default function Skills() {
       badgeColor: "bg-orange-600 text-white",
     },
   ];
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const categoryVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
-
-  const skillVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.3 },
-    },
-  };
-
   return (
     <ScrollReveal >
       <motion.div
-      variants={containerVariants}
+      variants={animationPresets.containerStagger}
       initial="hidden"
       animate="visible"
       className="card"
     >
       <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        {...animationPresets.headingEnter}
         className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%]"
       >
         {t("skills.title")}
@@ -86,10 +57,10 @@ export default function Skills() {
         {skillsData.map((category, catIdx) => (
           <motion.div
             key={catIdx}
-            variants={categoryVariants}
-            className={`p-6 rounded-xl bg-gradient-to-br ${category.color} bg-opacity-10 border border-white/40 hover:shadow-lg transition-all duration-300 backdrop-blur-md`}
+            variants={animationPresets.itemSlideUp}
+            className={`p-6 rounded-xl bg-gradient-to-br ${category.color} bg-opacity-10 dark:bg-opacity-5 border border-white/40 dark:border-slate-700/40 hover:shadow-lg transition-all duration-300 backdrop-blur-md`}
           >
-            <div className={`inline-block ${category.badgeColor} px-4 py-2 rounded-lg mb-4 font-bold text-lg`}>
+            <div className={`inline-block ${category.badgeColor} dark:${category.badgeColor.replace('bg-', 'dark:bg-')} dark:opacity-80 px-4 py-2 rounded-lg mb-4 font-bold text-lg`}>
               {category.category}
             </div>
 
@@ -97,7 +68,8 @@ export default function Skills() {
               {category.skills.map((skill, skillIdx) => (
                 <motion.span
                   key={skillIdx}
-                  variants={skillVariants}
+                  variants={animationPresets.tagStagger}
+                  custom={skillIdx}
                   whileHover={{ scale: 1.1, rotateY: 10 }}
                   whileTap={{ scale: 0.95 }}
                   className={`px-4 py-2 bg-gradient-to-r ${category.color} text-white rounded-full text-sm font-semibold shadow-md hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-default`}

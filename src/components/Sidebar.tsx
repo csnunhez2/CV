@@ -32,7 +32,7 @@ const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
         <h1 className="text-3xl font-bold mb-2 text-white bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
           César.dev
         </h1>
-        <p className="text-xs text-gray-500 mb-8">Software Engineer</p>
+        <p className="text-xs text-gray-400 mb-8">Software Engineer</p>
       </motion.div>
 
       <nav className="flex flex-col gap-1 overflow-y-auto flex-1">
@@ -115,7 +115,7 @@ const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
       >
-        <p className="text-xs text-gray-500 text-center">
+        <p className="text-xs text-gray-400 text-center">
           © 2024 - <span className="text-blue-400">César.dev</span>
         </p>
       </motion.div>

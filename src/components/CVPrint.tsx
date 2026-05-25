@@ -97,7 +97,7 @@ const CVPrint = () => {
       <div style={styles.section}>
         <h2 style={styles.sectionTitle}>{t('pdf.professionalSummary').toUpperCase()}</h2>
         <p style={styles.paragraph}>
-          Software engineer with 7+ years of experience specializing in backend development using Java and Spring Boot. Expertise in microservices architecture, REST APIs, and modern software development practices. Proven track record of delivering high-quality solutions in collaborative, agile environments with strong emphasis on testing and best practices.
+          {t('pdf.summaryText')}
         </p>
       </div>
 

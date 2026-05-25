@@ -113,6 +113,7 @@
   },
   "pdf": {
     "professionalSummary": "Professional Summary",
+    "summaryText": "Software engineer with 7+ years of experience specializing in backend development using Java and Spring Boot. Expertise in microservices architecture, REST APIs, and modern software development practices. Proven track record of delivering high-quality solutions in collaborative, agile environments with strong emphasis on testing and best practices.",
     "technicalSkills": "Technical Skills",
     "professionalExperience": "Professional Experience",
     "educationSection": "Education",

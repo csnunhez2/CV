@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Award, ExternalLink } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal";
+import { animationPresets, commonAnimations } from "../utils/animations";
 
 const getIssuerColor = (issuer: string) => {
   switch (issuer.toLowerCase()) {
@@ -86,37 +87,16 @@ const Certificates = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4 },
-    },
-  };
-
   return (
     <ScrollReveal >
       <motion.div
-      variants={containerVariants}
+      variants={animationPresets.containerStagger}
       initial="hidden"
       animate="visible"
       className="card"
     >
       <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        {...animationPresets.headingEnter}
         className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%] flex items-center gap-3"
       >
         <Award size={32} /> {t("certificates.title")}
@@ -129,28 +109,31 @@ const Certificates = () => {
             href={cert.link}
             target="_blank"
             rel="noopener noreferrer"
-            variants={itemVariants}
-            whileHover={{ y: -4, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
-            className="group p-5 border border-gray-200 rounded-xl bg-white hover:border-blue-300 transition-all cursor-pointer"
+            variants={animationPresets.itemSlideUp}
+            {...commonAnimations.card}
+            className="group p-5 rounded-xl hover:shadow-lg dark:hover:shadow-blue-900/50 transition-all cursor-pointer border"
+            style={{
+              backgroundColor: 'var(--card-bg)',
+              borderColor: 'var(--card-border)',
+            }}
           >
             <div className="flex items-start gap-3">
               <motion.div
                 className={`flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br ${getIssuerColor(
                   cert.issuer
-                )} flex items-center justify-center text-white shadow-md`}
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                )} dark:opacity-80 flex items-center justify-center text-white shadow-md`}
+                {...animationPresets.iconTilt}
               >
                 <Award size={20} />
               </motion.div>
 
               <div className="flex-1 min-w-0">
-                <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
+                <h3 className="font-semibold text-heading group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
                   {cert.title}
                 </h3>
-                <div className="flex items-center justify-between mt-2 text-xs text-gray-500 flex-wrap gap-1">
-                  <span className="font-medium text-gray-700">{cert.issuer}</span>
-                  <span>
+                <div className="flex items-center justify-between mt-2 text-xs text-secondary flex-wrap gap-1">
+                  <span className="font-medium text-main">{cert.issuer}</span>
+                  <span className="text-tertiary">
                     {cert.date}
                     {cert.end_date && ` - ${cert.end_date}`}
                   </span>
@@ -158,7 +141,7 @@ const Certificates = () => {
               </div>
 
               <motion.div
-                className="flex-shrink-0 text-gray-400 group-hover:text-blue-600 transition-colors"
+                className="flex-shrink-0 text-secondary dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
                 whileHover={{ scale: 1.2 }}
               >
                 <ExternalLink size={18} />

@@ -2,30 +2,15 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal";
 import { useViewportScroll, useTransform } from "framer-motion";
+import { animationPresets } from "../utils/animations";
 
 const About = () => {
   const { t } = useTranslation();
   const { scrollY } = useViewportScroll();
   const y = useTransform(scrollY, [0, 500], [0, 50]);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const paragraphVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.5 },
-    },
-  };
+  const containerVariants = animationPresets.containerStagger;
+  const paragraphVariants = animationPresets.itemSlideLeft;
 
   const paragraphs = [
     t("about.p1"),
@@ -45,9 +30,7 @@ const About = () => {
       className="card"
     >
       <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        {...animationPresets.headingEnter}
         className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%]"
       >
         {t("about.title")}
@@ -58,7 +41,7 @@ const About = () => {
           <motion.p
             key={index}
             variants={paragraphVariants}
-            className="text-gray-700 leading-relaxed text-lg hover:text-gray-900 transition-colors"
+            className="text-main leading-relaxed text-lg transition-colors"
           >
             {paragraph}
           </motion.p>
