@@ -50,12 +50,12 @@ function App() {
 
       {/* Animated background */}
       <motion.div
-        className={`fixed inset-0 z-0 opacity-50 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50'}`}
+        className={`fixed inset-0 z-0 opacity-60 pointer-events-none ${theme === 'dark' ? 'bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50'}`}
         animate={{
           backgroundPosition: ["0% 0%", "100% 100%"],
         }}
         transition={{
-          duration: 20,
+          duration: 25,
           repeat: Infinity,
           repeatType: "reverse",
         }}

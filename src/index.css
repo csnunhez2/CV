@@ -70,13 +70,15 @@ body {
     background-color: var(--card-bg);
     border-color: var(--card-border);
     @apply border;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--card-bg) 95%, white) 0%, color-mix(in srgb, var(--card-bg) 90%, white) 100%);
   }
 
   .card-compact {
-    @apply backdrop-blur-xl p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg hover:backdrop-blur-2xl;
+    @apply backdrop-blur-xl p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg hover:backdrop-blur-2xl hover:scale-[1.02];
     background-color: var(--card-bg);
     border-color: var(--card-border);
     @apply border;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--card-bg) 95%, white) 0%, color-mix(in srgb, var(--card-bg) 90%, white) 100%);
   }
 
   .skill-pill {
@@ -85,7 +87,12 @@ body {
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+    background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899, #a855f7, #3b82f6);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 4s ease infinite;
   }
 
   .text-heading {

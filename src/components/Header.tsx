@@ -8,6 +8,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 import html2pdf from "html2pdf.js";
 import { commonAnimations } from "../utils/animations";
+import { useMagneticButton } from "../utils/magnetic-button";
 
 interface HeaderProps {
   mobileMenuOpen: boolean;

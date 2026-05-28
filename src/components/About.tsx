@@ -1,13 +1,11 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal";
-import { useViewportScroll, useTransform } from "framer-motion";
 import { animationPresets } from "../utils/animations";
+import ParallaxSection from "./ParallaxSection";
 
 const About = () => {
   const { t } = useTranslation();
-  const { scrollY } = useViewportScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 50]);
 
   const containerVariants = animationPresets.containerStagger;
   const paragraphVariants = animationPresets.itemSlideLeft;
@@ -22,51 +20,52 @@ const About = () => {
 
   return (
     <ScrollReveal >
-      <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      style={{ y }}
-      className="card"
-    >
-      <motion.h2
-        {...animationPresets.headingEnter}
-        className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%]"
-      >
-        {t("about.title")}
-      </motion.h2>
-
-      <div className="space-y-6">
-        {paragraphs.map((paragraph, index) => (
-          <motion.p
-            key={index}
-            variants={paragraphVariants}
-            className="text-main leading-relaxed text-lg transition-colors"
+      <ParallaxSection offset={40}>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="card"
+        >
+          <motion.h2
+            {...animationPresets.headingEnter}
+            className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%]"
           >
-            {paragraph}
-          </motion.p>
-        ))}
-      </div>
+            {t("about.title")}
+          </motion.h2>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.5 }}
-        className="mt-10 pt-8 border-t border-blue-200 flex gap-4 flex-wrap"
-      >
-        {["Java", "Spring Boot", "Microservicios", "Backend", "Testing"].map(
-          (tag, index) => (
-            <motion.span
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              className="skill-pill"
-            >
-              {tag}
-            </motion.span>
-          )
-        )}
-      </motion.div>
-    </motion.div>
+          <div className="space-y-6">
+            {paragraphs.map((paragraph, index) => (
+              <motion.p
+                key={index}
+                variants={paragraphVariants}
+                className="text-main leading-relaxed text-lg transition-colors"
+              >
+                {paragraph}
+              </motion.p>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="mt-10 pt-8 border-t border-blue-200 flex gap-4 flex-wrap"
+          >
+            {["Java", "Spring Boot", "Microservicios", "Backend", "Testing"].map(
+              (tag, index) => (
+                <motion.span
+                  key={index}
+                  whileHover={{ scale: 1.05 }}
+                  className="skill-pill"
+                >
+                  {tag}
+                </motion.span>
+              )
+            )}
+          </motion.div>
+        </motion.div>
+      </ParallaxSection>
     </ScrollReveal>
   );
 };
