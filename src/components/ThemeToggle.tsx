@@ -1,27 +1,58 @@
 import { motion } from "framer-motion";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Zap } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
+import { useTranslation } from "react-i18next";
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
+  const { t } = useTranslation();
+
+  const getNextTheme = () => {
+    if (theme === 'light') return 'dark';
+    if (theme === 'dark') return 'cyberpunk';
+    return 'light';
+  };
+
+  const getIcon = () => {
+    switch (theme) {
+      case 'light':
+        return <Moon size={18} />;
+      case 'dark':
+        return <Zap size={18} />;
+      case 'cyberpunk':
+        return <Sun size={18} />;
+    }
+  };
+
+  const getHoverGradient = () => {
+    switch (theme) {
+      case 'light':
+        return 'hover:from-purple-600 hover:to-purple-700';
+      case 'dark':
+        return 'hover:from-cyan-600 hover:to-cyan-700';
+      case 'cyberpunk':
+        return 'hover:from-pink-600 hover:to-pink-700';
+    }
+  };
 
   return (
     <motion.button
       onClick={toggleTheme}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
-      className="w-9 h-9 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 hover:from-purple-600 hover:to-purple-700 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
-      title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+      className={`w-9 h-9 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 ${getHoverGradient()} flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl`}
+      title={t(`header.switchToTheme.${theme === 'light' ? 'dark' : theme === 'dark' ? 'cyberpunk' : 'light'}`)}
     >
       <motion.div
         initial={false}
-        animate={{ rotate: theme === 'dark' ? 180 : 0 }}
+        animate={{ rotate: theme === 'cyberpunk' ? 360 : 0 }}
         transition={{ duration: 0.3 }}
       >
-        {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+        {getIcon()}
       </motion.div>
     </motion.button>
   );
 };
 
 export default ThemeToggle;
+

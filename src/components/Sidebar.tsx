@@ -7,11 +7,42 @@ import {
   GraduationCap,
   Award,
   Globe,
+  Mail,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeToggle from "./ThemeToggle";
+import GitHubIcon from "../assets/icons/github.svg";
+import LinkedInIcon from "../assets/icons/linkedin.svg";
+import html2pdf from "html2pdf.js";
+import { commonAnimations } from "../utils/animations";
 
 const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
   const { t } = useTranslation();
+
+  const downloadCV = () => {
+    const element = document.getElementById("cv-print");
+    if (!element) return;
+
+    const originalDisplay = (element as HTMLElement).style.display;
+    (element as HTMLElement).style.display = "block";
+
+    const opt = {
+      margin: 10,
+      filename: "CV_CesarNunhez.pdf",
+      image: { type: "jpeg" as const, quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { orientation: "portrait" as const, unit: "mm", format: "a4" },
+    };
+
+    html2pdf()
+      .set(opt)
+      .from(element)
+      .save()
+      .then(() => {
+        (element as HTMLElement).style.display = originalDisplay;
+      });
+  };
 
   const items = [
     { id: "about", label: t("sidebar.about"), icon: User },
@@ -110,12 +141,64 @@ const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
       </nav>
 
       <motion.div
-        className="pt-6 border-t border-slate-800"
+        className="pt-6 border-t border-slate-800 space-y-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
       >
-        <p className="text-xs text-gray-400 text-center">
+        {/* Mobile action buttons - visible only on md:hidden */}
+        <div className="md:hidden flex flex-col gap-3">
+          {/* Social links */}
+          <div className="flex gap-2 justify-center">
+            <motion.a
+              href="https://github.com/csnunhez2"
+              target="_blank"
+              rel="noopener noreferrer"
+              {...commonAnimations.socialLink}
+              className="w-8 h-8 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 hover:from-blue-600 hover:to-blue-700 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
+              title="GitHub"
+            >
+              <img src={GitHubIcon} alt="GitHub" className="w-4 h-4 invert" />
+            </motion.a>
+
+            <motion.a
+              href="https://www.linkedin.com/in/csnunhez/"
+              target="_blank"
+              rel="noopener noreferrer"
+              {...commonAnimations.socialLink}
+              className="w-8 h-8 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 hover:from-purple-600 hover:to-purple-700 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
+              title="LinkedIn"
+            >
+              <img src={LinkedInIcon} alt="LinkedIn" className="w-4 h-4 invert" />
+            </motion.a>
+
+            <motion.a
+              href="mailto:cesar.santiago.nunhez@gmail.com"
+              {...commonAnimations.socialLink}
+              className="w-8 h-8 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 hover:from-pink-600 hover:to-pink-700 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
+              title="Email"
+            >
+              <Mail size={16} />
+            </motion.a>
+          </div>
+
+          {/* Theme and Language toggles */}
+          <div className="flex gap-2 justify-center">
+            <ThemeToggle />
+            <LanguageSwitcher />
+          </div>
+
+          {/* Download CV button */}
+          <motion.button
+            onClick={downloadCV}
+            {...commonAnimations.button}
+            className="w-full px-4 py-2 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-lg text-sm font-semibold hover:shadow-2xl transition-all duration-300 hover:from-blue-500 hover:via-purple-500 hover:to-pink-500"
+          >
+            {t('header.downloadCV')}
+          </motion.button>
+        </div>
+
+        <p className="text-xs text-gray-400 text-center pt-4 border-t border-slate-800">
           © 2024 - <span className="text-blue-400">César.dev</span>
         </p>
       </motion.div>

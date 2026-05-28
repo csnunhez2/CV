@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import CVPrint from "./components/CVPrint";
+import FAB from "./components/FAB";
+import AnimatedBackground from "./components/AnimatedBackground";
+import ConnectingLines from "./components/ConnectingLines";
 import { useTheme } from "./contexts/ThemeContext";
 
 import About from "./components/About";
@@ -39,6 +42,12 @@ function App() {
 
   return (
     <div className={`min-h-screen flex flex-col relative overflow-hidden transition-colors duration-300 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50'}`}>
+      {/* Animated blobs and shapes background */}
+      <AnimatedBackground />
+
+      {/* Connecting lines between blobs */}
+      <ConnectingLines />
+
       {/* Animated background */}
       <motion.div
         className={`fixed inset-0 z-0 opacity-50 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50'}`}
@@ -92,7 +101,7 @@ function App() {
         </motion.div>
 
         {/* Main content - pushed right on desktop to account for sidebar */}
-        <main id="cv-content" className="flex-1 overflow-y-auto p-4 md:p-6 md:ml-64">
+        <main id="cv-content" className="flex-1 overflow-y-auto p-4 md:p-6 md:ml-64 pb-20 md:pb-8">
           <div className="relative z-10 max-w-5xl mx-auto">
             <AnimatePresence mode="wait">
               <motion.div
@@ -110,6 +119,9 @@ function App() {
       </div>
 
       </div>
+
+      {/* Floating Action Button */}
+      <FAB />
     </div>
   );
 }

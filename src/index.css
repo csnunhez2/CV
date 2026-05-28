@@ -37,6 +37,21 @@
   --card-border: rgba(51, 65, 85, 0.5);
 }
 
+[data-theme="cyberpunk"] {
+  /* Cyberpunk mode */
+  --bg-primary: #0a0e27;
+  --bg-secondary: #1a0033;
+  --text-heading: #00ffff;
+  --text-primary: #ff00ff;
+  --text-secondary: #00ffff;
+  --text-tertiary: #ff0080;
+  --border-color: #ff00ff;
+  --card-bg: rgba(10, 14, 39, 0.95);
+  --card-border: #ff00ff;
+  --glow-primary: #ff00ff;
+  --glow-secondary: #00ffff;
+}
+
 body {
   @apply bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 text-gray-800;
   background-color: var(--bg-secondary);
@@ -177,4 +192,35 @@ body {
 
 .animation-delay-4000 {
   animation-delay: 4s;
+}
+
+/* Cyberpunk special effects */
+[data-theme="cyberpunk"] {
+  --shadow-glow: 0 0 20px rgba(255, 0, 255, 0.8);
+  --shadow-glow-cyan: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+[data-theme="cyberpunk"] .card,
+[data-theme="cyberpunk"] .card-compact {
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3), inset 0 0 20px rgba(255, 0, 255, 0.05);
+}
+
+[data-theme="cyberpunk"] .card:hover,
+[data-theme="cyberpunk"] .card-compact:hover {
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.5), inset 0 0 30px rgba(255, 0, 255, 0.1);
+}
+
+/* Cyberpunk glow animation */
+@keyframes cyberpunk-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.4);
+  }
+}
+
+[data-theme="cyberpunk"] input:focus,
+[data-theme="cyberpunk"] textarea:focus {
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
 }

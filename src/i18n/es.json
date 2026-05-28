@@ -1,7 +1,12 @@
 {
   "header": {
     "softwareEngineer": "Ingeniero de Software",
-    "downloadCV": "Descargar CV"
+    "downloadCV": "Descargar CV",
+    "switchToTheme": {
+      "light": "Cambiar a modo claro",
+      "dark": "Cambiar a modo oscuro",
+      "cyberpunk": "Cambiar a modo cyberpunk"
+    }
   },
   "sidebar": {
     "about": "Sobre mí",

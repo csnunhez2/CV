@@ -1,7 +1,12 @@
 {
   "header": {
     "softwareEngineer": "Software Engineer",
-    "downloadCV": "Download CV"
+    "downloadCV": "Download CV",
+    "switchToTheme": {
+      "light": "Switch to light mode",
+      "dark": "Switch to dark mode",
+      "cyberpunk": "Switch to cyberpunk mode"
+    }
   },
   "sidebar": {
     "about": "About Me",
