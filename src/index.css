@@ -12,6 +12,16 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 
+  /* Design Tokens */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+
   /* Light mode */
   --bg-primary: #ffffff;
   --bg-secondary: #f8fafc;
@@ -86,6 +96,62 @@ body {
            rounded-full text-sm font-medium hover:shadow-md transition-shadow cursor-default;
   }
 
+  .section-title {
+    @apply text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%];
+  }
+
+  .timeline-item {
+    @apply p-6 rounded-xl border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:shadow-lg;
+  }
+
+  .section-container {
+    @apply space-y-6;
+  }
+
+  .fade-in {
+    @apply animate-fade-in;
+  }
+
+  .glowing-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400;
+  }
+
+  /* Tier 4: Advanced Effects */
+  .blur-depth {
+    @apply backdrop-blur-lg;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--card-bg) 98%, white) 0%, color-mix(in srgb, var(--card-bg) 92%, white) 100%);
+  }
+
+  .blur-depth::before {
+    content: "";
+    @apply absolute inset-0 rounded-2xl;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--card-bg) 95%, white) 0%, color-mix(in srgb, var(--card-bg) 88%, white) 100%);
+    backdrop-filter: blur(20px);
+    z-index: -1;
+  }
+
+  .text-shimmer-effect {
+    background: linear-gradient(90deg, var(--text-primary), var(--text-secondary), var(--text-primary));
+    background-size: 200% 200%;
+    animation: text-shimmer 3s ease-in-out infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .scroll-reveal {
+    @apply opacity-0 translate-y-8;
+  }
+
+  .scroll-reveal.visible {
+    @apply opacity-100 translate-y-0 transition-all duration-700 ease-out;
+  }
+
+  /* Hover depth effect */
+  .hover-lift {
+    @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+  }
+
   .gradient-text {
     background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899, #a855f7, #3b82f6);
     background-size: 200% 200%;
@@ -142,12 +208,12 @@ body {
   }
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% center;
+@keyframes text-shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
   }
-  100% {
-    background-position: 200% center;
+  50% {
+    background-position: 100% 50%;
   }
 }
 

@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, Building2, ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal";
+import ParallaxSection from "./ParallaxSection";
 import { useState } from "react";
 import { animationPresets, commonAnimations } from "../utils/animations";
 
@@ -47,12 +48,13 @@ const Experience = () => {
 
   return (
     <ScrollReveal >
-      <motion.div
-      variants={animationPresets.containerStagger}
-      initial="hidden"
-      animate="visible"
-      className="card"
-    >
+      <ParallaxSection offset={40}>
+        <motion.div
+          variants={animationPresets.containerStagger}
+          initial="hidden"
+          animate="visible"
+          className="card"
+        >
       <motion.h2
         {...animationPresets.headingEnter}
         className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%]"
@@ -65,6 +67,10 @@ const Experience = () => {
           <motion.div
             key={i}
             onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
             variants={animationPresets.itemSlideLeft}
             className="relative pl-8 pb-8 border-l-2 border-gradient-to-b from-blue-500 to-purple-500 last:pb-0 cursor-pointer"
           >
@@ -126,7 +132,8 @@ const Experience = () => {
           </motion.div>
         ))}
       </div>
-    </motion.div>
+        </motion.div>
+      </ParallaxSection>
     </ScrollReveal>
   );
 };

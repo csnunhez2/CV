@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal";
+import ParallaxSection from "./ParallaxSection";
 import { animationPresets } from "../utils/animations";
 
 const Languages = () => {
@@ -29,12 +30,13 @@ const Languages = () => {
   ];
   return (
     <ScrollReveal >
-      <motion.div
-      variants={animationPresets.containerStagger}
-      initial="hidden"
-      animate="visible"
-      className="card"
-    >
+      <ParallaxSection offset={40}>
+        <motion.div
+          variants={animationPresets.containerStagger}
+          initial="hidden"
+          animate="visible"
+          className="card"
+        >
       <motion.h2
         {...animationPresets.headingEnter}
         className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%] flex items-center gap-3"
@@ -44,8 +46,14 @@ const Languages = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {languages.map((lang, i) => (
-          <motion.div key={i} variants={animationPresets.itemSlideUp} className="space-y-3">
-            <div className="flex items-center justify-between">
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+            className="space-y-3"
+          >  <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <span className="text-3xl">{lang.flag}</span>
                 <div>
@@ -78,7 +86,8 @@ const Languages = () => {
           <span className="font-semibold text-blue-600 dark:text-blue-400">Disponible para</span> proyectos en español, gallego e inglés
         </p>
       </motion.div>
-    </motion.div>
+        </motion.div>
+      </ParallaxSection>
     </ScrollReveal>
   );
 };

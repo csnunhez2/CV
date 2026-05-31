@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { GraduationCap, Award } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal";
+import ParallaxSection from "./ParallaxSection";
 import { animationPresets } from "../utils/animations";
 
 const Education = () => {
@@ -30,12 +31,13 @@ const Education = () => {
   ];
   return (
     <ScrollReveal >
-      <motion.div
-      variants={animationPresets.containerStagger}
-      initial="hidden"
-      animate="visible"
-      className="card"
-    >
+      <ParallaxSection offset={40}>
+        <motion.div
+          variants={animationPresets.containerStagger}
+          initial="hidden"
+          animate="visible"
+          className="card"
+        >
       <motion.h2
         {...animationPresets.headingEnter}
         className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%]"
@@ -49,8 +51,11 @@ const Education = () => {
           return (
             <motion.div
               key={i}
-              variants={animationPresets.itemSlideLeft}
-              className="p-6 rounded-xl backdrop-blur-lg hover:shadow-lg transition-all duration-300 hover:scale-[1.02] group border"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+              className="p-6 rounded-xl backdrop-blur-lg hover:shadow-lg transition-all duration-300 group border"
               style={{
                 backgroundColor: 'var(--card-bg)',
                 borderColor: 'var(--card-border)',
@@ -86,7 +91,8 @@ const Education = () => {
           );
         })}
       </div>
-    </motion.div>
+        </motion.div>
+      </ParallaxSection>
     </ScrollReveal>
   );
 };

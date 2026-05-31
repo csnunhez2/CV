@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { BookOpen, ExternalLink } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal";
+import ParallaxSection from "./ParallaxSection";
 import { animationPresets, commonAnimations } from "../utils/animations";
 
 const Courses = () => {
@@ -58,12 +59,13 @@ const Courses = () => {
   ];
   return (
     <ScrollReveal >
-      <motion.div
-      variants={animationPresets.containerStagger}
-      initial="hidden"
-      animate="visible"
-      className="card"
-    >
+      <ParallaxSection offset={40}>
+        <motion.div
+          variants={animationPresets.containerStagger}
+          initial="hidden"
+          animate="visible"
+          className="card"
+        >
       <motion.h2
         {...animationPresets.headingEnter}
         className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%] flex items-center gap-3"
@@ -78,7 +80,10 @@ const Courses = () => {
             href={course.link}
             target="_blank"
             rel="noopener noreferrer"
-            variants={animationPresets.itemSlideUp}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
             {...commonAnimations.card}
             className="group p-5 rounded-xl backdrop-blur-lg hover:shadow-lg transition-all duration-300 hover:scale-[1.02] hover:bg-opacity-80 cursor-pointer border"
             style={{
@@ -116,6 +121,7 @@ const Courses = () => {
         ))}
       </div>
     </motion.div>
+      </ParallaxSection>
     </ScrollReveal>
   );
 };

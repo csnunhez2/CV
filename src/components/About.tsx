@@ -28,7 +28,9 @@ const About = () => {
           className="card"
         >
           <motion.h2
-            {...animationPresets.headingEnter}
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%]"
           >
             {t("about.title")}
@@ -38,7 +40,10 @@ const About = () => {
             {paragraphs.map((paragraph, index) => (
               <motion.p
                 key={index}
-                variants={paragraphVariants}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, amount: 0.5 }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
                 className="text-main leading-relaxed text-lg transition-colors"
               >
                 {paragraph}

@@ -2,6 +2,7 @@
   "header": {
     "softwareEngineer": "Software Engineer",
     "downloadCV": "Download CV",
+    "switchTo": "Switch to ",
     "switchToTheme": {
       "light": "Switch to light mode",
       "dark": "Switch to dark mode",
