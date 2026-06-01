@@ -152,6 +152,112 @@ body {
     @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
   }
 
+  /* Futuristic Sidebar Styles */
+  .sidebar-container {
+    @apply h-full w-64 text-gray-300 p-6 flex flex-col border-r transition-all duration-300 overflow-hidden;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 100%);
+    backdrop-filter: blur(20px);
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+
+  [data-theme="cyberpunk"] .sidebar-container {
+    background: linear-gradient(135deg, rgba(10, 14, 39, 0.9) 0%, rgba(26, 0, 51, 0.7) 100%);
+    border-color: rgba(255, 0, 255, 0.3);
+    box-shadow: inset 0 0 30px rgba(255, 0, 255, 0.05), 0 0 30px rgba(255, 0, 255, 0.1);
+  }
+
+  .nav-button {
+    @apply relative px-4 py-3 rounded-xl text-left font-medium transition-all duration-300 overflow-hidden;
+    color: rgba(226, 232, 240, 1);
+  }
+
+  .nav-button:hover {
+    @apply text-blue-300;
+  }
+
+  .nav-button::before {
+    content: "";
+    @apply absolute inset-0 rounded-xl;
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0) 0%, rgba(168, 85, 247, 0.1) 50%, rgba(59, 130, 246, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-button:hover::before {
+    opacity: 1;
+  }
+
+  .nav-button.active {
+    @apply text-white font-semibold;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(168, 85, 247, 0.2) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.5);
+    box-shadow: inset 0 0 20px rgba(59, 130, 246, 0.2), 0 0 30px rgba(59, 130, 246, 0.35);
+  }
+
+  [data-theme="cyberpunk"] .nav-button.active {
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.2) 0%, rgba(0, 255, 255, 0.1) 100%);
+    border: 1px solid rgba(255, 0, 255, 0.5);
+    box-shadow: inset 0 0 20px rgba(255, 0, 255, 0.15), 0 0 30px rgba(255, 0, 255, 0.4);
+    color: #00ffff;
+  }
+
+  [data-theme="cyberpunk"] .nav-button.active::after {
+    background: linear-gradient(180deg, #ff00ff 0%, #00ffff 100%);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8), 0 0 10px rgba(0, 255, 255, 0.6);
+  }
+
+  .nav-icon {
+    @apply transition-all duration-300;
+  }
+
+  .nav-button:hover .nav-icon {
+    @apply scale-110 text-blue-300;
+  }
+
+  .nav-button.active .nav-icon {
+    @apply text-blue-300 scale-110;
+  }
+
+  [data-theme="cyberpunk"] .nav-button.active .nav-icon {
+    @apply text-cyan-300 scale-110;
+  }
+
+  .sidebar-divider {
+    @apply border-t border-gray-700/30 my-4;
+  }
+
+  /* Header Styles */
+  header {
+    @apply backdrop-blur-xl;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.7) 100%) !important;
+    border-color: rgba(59, 130, 246, 0.15) !important;
+  }
+
+  [data-theme="cyberpunk"] header {
+    background: linear-gradient(135deg, rgba(10, 14, 39, 0.9) 0%, rgba(26, 0, 51, 0.8) 100%) !important;
+    border-color: rgba(255, 0, 255, 0.25) !important;
+  }
+
+  /* Header social links styling */
+  header a[title], header button[title] {
+    @apply backdrop-blur-lg transition-all duration-300;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(168, 85, 247, 0.05) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+
+  header a[title]:hover, header button[title]:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(168, 85, 247, 0.15) 100%);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  [data-theme="cyberpunk"] header a[title]:hover,
+  [data-theme="cyberpunk"] header button[title]:hover {
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.15) 0%, rgba(0, 255, 255, 0.1) 100%);
+    border-color: rgba(255, 0, 255, 0.4);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+  }
+
   .gradient-text {
     background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899, #a855f7, #3b82f6);
     background-size: 200% 200%;

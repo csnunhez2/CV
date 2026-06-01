@@ -47,9 +47,13 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
     <>
       <ScrollProgressBar />
       <motion.header
-      {...commonAnimations.header}
-      className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 border-b border-slate-700 dark:border-slate-800 shadow-lg fixed top-0 left-0 right-0 z-40 transition-colors duration-300"
-    >
+        {...commonAnimations.header}
+        className="backdrop-blur-xl border-b shadow-lg fixed top-0 left-0 right-0 z-40 transition-all duration-300"
+        style={{
+          background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.7) 100%)',
+          borderColor: 'rgba(59, 130, 246, 0.15)',
+        }}
+      >
       <div className="max-w-full px-8 py-4 flex items-center justify-between">
         {/* Logo e nome */}
         <motion.div
@@ -76,7 +80,10 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
               target="_blank"
               rel="noopener noreferrer"
               {...commonAnimations.socialLink}
-              className="w-9 h-9 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 hover:from-blue-600 hover:to-blue-700 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
+              className="w-9 h-9 rounded-lg backdrop-blur-lg border border-blue-500/20 hover:border-blue-500/50 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
+              style={{
+                background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(168, 85, 247, 0.05) 100%)',
+              }}
               title="GitHub"
             >
               <img src={GitHubIcon} alt="GitHub" className="w-5 h-5 invert" />
@@ -87,7 +94,10 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
               target="_blank"
               rel="noopener noreferrer"
               {...commonAnimations.socialLink}
-              className="w-9 h-9 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 hover:from-purple-600 hover:to-purple-700 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
+              className="w-9 h-9 rounded-lg backdrop-blur-lg border border-purple-500/20 hover:border-purple-500/50 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
+              style={{
+                background: 'linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%)',
+              }}
               title="LinkedIn"
             >
               <img src={LinkedInIcon} alt="LinkedIn" className="w-5 h-5 invert" />
@@ -96,7 +106,10 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
             <motion.a
               href="mailto:cesar.santiago.nunhez@gmail.com"
               {...commonAnimations.socialLink}
-              className="w-9 h-9 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 hover:from-pink-600 hover:to-pink-700 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
+              className="w-9 h-9 rounded-lg backdrop-blur-lg border border-pink-500/20 hover:border-pink-500/50 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
+              style={{
+                background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(168, 85, 247, 0.05) 100%)',
+              }}
               title="Email"
             >
               <Mail size={18} />

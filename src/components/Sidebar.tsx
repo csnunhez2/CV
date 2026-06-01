@@ -54,7 +54,7 @@ const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
     { id: "languages", label: t("sidebar.languages"), icon: Globe },
   ];
   return (
-    <div className="h-full w-64 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-gray-300 p-6 flex flex-col border-r border-slate-800 shadow-2xl">
+    <div className="sidebar-container shadow-2xl">
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -66,12 +66,12 @@ const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
         <p className="text-xs text-gray-400 mb-8">Software Engineer</p>
       </motion.div>
 
-      <nav className="flex flex-col gap-1 overflow-y-auto flex-1">
+      <nav className="flex flex-col gap-2 overflow-y-auto flex-1">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ staggerChildren: 0.05, delayChildren: 0.2 }}
-          className="flex flex-col gap-1"
+          className="flex flex-col gap-2"
         >
           {items.map((item) => {
             const Icon = item.icon;
@@ -85,39 +85,27 @@ const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
                   setCurrent(item.id);
                   onItemClick?.();
                 }}
-                className="relative px-4 py-3 rounded-lg text-left overflow-hidden group transition-all duration-300"
+                whileTap={{ opacity: 0.9 }}
+                className={`nav-button ${current === item.id ? "active" : ""}`}
               >
-                {current === item.id && (
-                  <motion.div
-                    layoutId={`active-${item.id}`}
-                    className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg"
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  />
-                )}
-
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-purple-600/0 group-hover:from-blue-500/10 group-hover:to-purple-600/10 rounded-lg"
-                  transition={{ duration: 0.3 }}
-                />
-
                 <div className="relative z-10 flex items-center gap-3">
                   <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    whileTap={{ scale: 0.95 }}
+                    className="nav-icon"
+                    whileHover={{ rotate: 10 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   >
                     <Icon
                       size={20}
                       className={`transition-colors duration-300 ${
                         current === item.id
-                          ? "text-white"
-                          : "text-gray-400 group-hover:text-gray-300"
+                          ? "text-blue-400"
+                          : "text-gray-400 group-hover:text-blue-300"
                       }`}
                     />
                   </motion.div>
 
                   <span
-                    className={`transition-colors duration-300 font-medium ${
+                    className={`transition-colors duration-300 ${
                       current === item.id
                         ? "text-white font-semibold"
                         : "text-gray-300 group-hover:text-white"
@@ -126,14 +114,6 @@ const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
                     {item.label}
                   </span>
                 </div>
-
-                {current === item.id && (
-                  <motion.div
-                    layoutId={`indicator-${item.id}`}
-                    className="absolute right-0 top-1/2 w-1 h-6 bg-white rounded-l-full"
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  />
-                )}
               </motion.button>
             );
           })}
@@ -154,28 +134,31 @@ const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
               href="https://github.com/csnunhez2"
               target="_blank"
               rel="noopener noreferrer"
-              {...commonAnimations.socialLink}
-              className="w-8 h-8 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 hover:from-blue-600 hover:to-blue-700 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
+              whileHover={{ scale: 1.1, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 hover:from-blue-600 hover:to-blue-700 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl border border-gray-600/30"
               title="GitHub"
             >
-              <img src={GitHubIcon} alt="GitHub" className="w-4 h-4 invert" />
+              <img src={GitHubIcon} alt="GitHub" className="w-5 h-5 invert" />
             </motion.a>
 
             <motion.a
               href="https://www.linkedin.com/in/csnunhez/"
               target="_blank"
               rel="noopener noreferrer"
-              {...commonAnimations.socialLink}
-              className="w-8 h-8 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 hover:from-purple-600 hover:to-purple-700 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
+              whileHover={{ scale: 1.1, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 hover:from-purple-600 hover:to-purple-700 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl border border-gray-600/30"
               title="LinkedIn"
             >
-              <img src={LinkedInIcon} alt="LinkedIn" className="w-4 h-4 invert" />
+              <img src={LinkedInIcon} alt="LinkedIn" className="w-5 h-5 invert" />
             </motion.a>
 
             <motion.a
               href="mailto:cesar.santiago.nunhez@gmail.com"
-              {...commonAnimations.socialLink}
-              className="w-8 h-8 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 hover:from-pink-600 hover:to-pink-700 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
+              whileHover={{ scale: 1.1, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 hover:from-pink-600 hover:to-pink-700 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl border border-gray-600/30"
               title="Email"
             >
               <Mail size={16} />
@@ -191,7 +174,8 @@ const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
           {/* Download CV button */}
           <motion.button
             onClick={downloadCV}
-            {...commonAnimations.button}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="w-full px-4 py-2 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-lg text-sm font-semibold hover:shadow-2xl transition-all duration-300 hover:from-blue-500 hover:via-purple-500 hover:to-pink-500"
           >
             {t('header.downloadCV')}
