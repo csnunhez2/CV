@@ -111,7 +111,8 @@ const Experience = () => {
                             key={idx}
                             {...animationPresets.tagStagger}
                             custom={idx}
-                            className="px-3 py-1 bg-white/60 dark:bg-slate-700/60 backdrop-blur-md text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium hover:shadow-md transition-all duration-300 border border-white/40 dark:border-slate-600/40 cursor-default"
+                            whileHover={{ scale: 1.05 }}
+                            className="skill-pill"
                           >
                             {tag}
                           </motion.span>

@@ -55,16 +55,6 @@ const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
   ];
   return (
     <div className="sidebar-container shadow-2xl">
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h1 className="text-3xl font-bold mb-2 text-white bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-          César.dev
-        </h1>
-        <p className="text-xs text-gray-400 mb-8">{t("header.softwareEngineer")}</p>
-      </motion.div>
 
       <nav className="flex flex-col gap-2 overflow-y-auto flex-1">
         <motion.div
@@ -121,13 +111,13 @@ const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
       </nav>
 
       <motion.div
-        className="pt-6 border-t border-slate-800 space-y-4"
+        className="md:hidden pt-6 border-t border-slate-800 space-y-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
       >
         {/* Mobile action buttons - visible only on md:hidden */}
-        <div className="md:hidden flex flex-col gap-3">
+        <div className="flex flex-col gap-3">
           {/* Social links */}
           <div className="flex gap-2 justify-center">
             <motion.a
@@ -182,9 +172,6 @@ const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
           </motion.button>
         </div>
 
-        <p className="text-xs text-gray-400 text-center pt-4 border-t border-slate-800">
-          © 2024 - <span className="text-blue-400">César.dev</span>
-        </p>
       </motion.div>
     </div>
   );

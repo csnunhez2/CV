@@ -65,7 +65,7 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
           </div>
           <div>
             <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              César.dev
+              César Miguel Santiago Núñez
             </h1>
             <p className="text-xs text-gray-400">{t('header.softwareEngineer')}</p>
           </div>

@@ -69,17 +69,6 @@ const Languages = () => {
           </motion.div>
         ))}
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.5 }}
-        className="mt-8 p-6 bg-white/60 dark:bg-slate-800/60 backdrop-blur-lg rounded-lg border border-white/40 dark:border-slate-700/40 hover:shadow-lg transition-shadow"
-      >
-        <p className="text-sm text-main text-center">
-          <span className="font-semibold text-blue-600 dark:text-blue-400">Disponible para</span> proyectos en español, gallego e inglés
-        </p>
-      </motion.div>
         </motion.div>
       </ParallaxSection>
     </ScrollReveal>
