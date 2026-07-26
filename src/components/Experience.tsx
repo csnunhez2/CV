@@ -10,41 +10,30 @@ const Experience = () => {
   const { t } = useTranslation();
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
 
-  const experiences = [
-    {
-      role: t("experience.fullstack.role"),
-      company: t("experience.fullstack.company"),
-      date: t("experience.fullstack.date"),
-      description: t("experience.fullstack.description"),
-      tags: ["Spring Boot", "Angular", "PostgreSQL", "Microservicios"],
-    },
-    {
-      role: t("experience.tutor.role"),
-      company: t("experience.tutor.company"),
-      date: t("experience.tutor.date"),
-      description: t("experience.tutor.description"),
-      tags: ["Ontimize", "Scrum", "Mentoría"],
-    },
-    {
-      role: t("experience.rockbotic.role"),
-      company: t("experience.rockbotic.company"),
-      date: t("experience.rockbotic.date"),
-      description: t("experience.rockbotic.description"),
-      tags: ["Programación", "Robótica", "Educación"],
-    },
-    {
-      role: t("experience.support1.role"),
-      company: t("experience.support1.company"),
-      date: t("experience.support1.date"),
-      tags: ["Soporte Técnico"],
-    },
-    {
-      role: t("experience.support2.role"),
-      company: t("experience.support2.company"),
-      date: t("experience.support2.date"),
-      tags: ["Soporte Técnico"],
-    },
-  ];
+  type ExperienceItem = {
+    role: string;
+    company: string;
+    date: string;
+    description?: string;
+    tags?: string;
+  };
+
+  const experiences = (t("experience.items", {
+    returnObjects: true,
+    defaultValue: [],
+  }) as ExperienceItem[]).map((item) => {
+    const tags = item.tags
+      ? item.tags.split(",").map((tag) => tag.trim()).filter(Boolean)
+      : [];
+
+    return {
+      role: item.role,
+      company: item.company,
+      date: item.date,
+      description: item.description ?? "",
+      tags,
+    };
+  });
 
   return (
     <ScrollReveal >
@@ -111,20 +100,24 @@ const Experience = () => {
                   <motion.div
                     {...animationPresets.expandCollapse}
                   >
-                    <p className="text-main leading-relaxed mb-4">{item.description}</p>
+                    {item.description && (
+                      <p className="text-main leading-relaxed mb-4">{item.description}</p>
+                    )}
 
-                    <div className="flex flex-wrap gap-2">
-                      {item.tags.map((tag, idx) => (
-                        <motion.span
-                          key={idx}
-                          {...animationPresets.tagStagger}
-                          custom={idx}
-                          className="px-3 py-1 bg-white/60 dark:bg-slate-700/60 backdrop-blur-md text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium hover:shadow-md transition-all duration-300 border border-white/40 dark:border-slate-600/40 cursor-default"
-                        >
-                          {tag}
-                        </motion.span>
-                      ))}
-                    </div>
+                    {item.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {item.tags.map((tag, idx) => (
+                          <motion.span
+                            key={idx}
+                            {...animationPresets.tagStagger}
+                            custom={idx}
+                            className="px-3 py-1 bg-white/60 dark:bg-slate-700/60 backdrop-blur-md text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium hover:shadow-md transition-all duration-300 border border-white/40 dark:border-slate-600/40 cursor-default"
+                          >
+                            {tag}
+                          </motion.span>
+                        ))}
+                      </div>
+                    )}
                   </motion.div>
                 )}
               </AnimatePresence>

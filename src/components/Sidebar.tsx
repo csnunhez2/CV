@@ -63,7 +63,7 @@ const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
         <h1 className="text-3xl font-bold mb-2 text-white bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
           César.dev
         </h1>
-        <p className="text-xs text-gray-400 mb-8">Software Engineer</p>
+        <p className="text-xs text-gray-400 mb-8">{t("header.softwareEngineer")}</p>
       </motion.div>
 
       <nav className="flex flex-col gap-2 overflow-y-auto flex-1">

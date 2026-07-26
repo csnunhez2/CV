@@ -8,27 +8,23 @@ import { animationPresets } from "../utils/animations";
 const Education = () => {
   const { t } = useTranslation();
 
-  const education = [
-    {
-      title: t("education.degree1.title"),
-      place: t("education.degree1.place"),
-      date: t("education.degree1.date"),
-      description: t("education.degree1.specialization"),
-      icon: GraduationCap,
-    },
-    {
-      title: t("education.degree2.title"),
-      place: t("education.degree2.place"),
-      date: t("education.degree2.date"),
-      icon: Award,
-    },
-    {
-      title: t("education.degree3.title"),
-      place: t("education.degree3.place"),
-      date: t("education.degree3.date"),
-      icon: Award,
-    },
-  ];
+  type EducationItem = {
+    title: string;
+    place: string;
+    date: string;
+    specialization?: string;
+  };
+
+  const education = (t("education.items", {
+    returnObjects: true,
+    defaultValue: [],
+  }) as EducationItem[]).map((item, index) => ({
+    title: item.title,
+    place: item.place,
+    date: item.date,
+    description: item.specialization ?? "",
+    icon: index === 0 ? GraduationCap : Award,
+  }));
   return (
     <ScrollReveal >
       <ParallaxSection offset={40}>

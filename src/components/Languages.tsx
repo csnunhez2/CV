@@ -8,26 +8,20 @@ import { animationPresets } from "../utils/animations";
 const Languages = () => {
   const { t } = useTranslation();
 
-  const languages = [
-    {
-      name: t("languages.spanish"),
-      level: t("languages.native"),
-      percentage: 100,
-      flag: "🇪🇸",
-    },
-    {
-      name: t("languages.galician"),
-      level: t("languages.native"),
-      percentage: 100,
-      flag: "🏴",
-    },
-    {
-      name: t("languages.english"),
-      level: t("languages.toeic"),
-      percentage: 75,
-      flag: "🇬🇧",
-    },
-  ];
+  type LanguageItem = {
+    name: string;
+    level: string;
+  };
+
+  const languages = (t("languages.items", {
+    returnObjects: true,
+    defaultValue: [],
+  }) as LanguageItem[]).map((item, index) => ({
+    name: item.name,
+    level: item.level,
+    percentage: index === 2 ? 75 : 100,
+    flag: index === 0 ? "🇪🇸" : index === 1 ? "🏴" : "🇬🇧",
+  }));
   return (
     <ScrollReveal >
       <ParallaxSection offset={40}>

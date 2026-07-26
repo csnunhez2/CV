@@ -30,37 +30,39 @@
   },
   "experience": {
     "title": "Professional Experience",
-    "fullstack": {
-      "role": "Full Stack Developer",
-      "company": "Imatia",
-      "date": "June 2018 - Present",
-      "description": "I developed applications with Spring Boot, evolving monolithic architectures to microservices. Experience with multiple databases (PostgreSQL, MySQL, MS SQL Server, MongoDB) in a Scrum/Agile environment.",
-      "tags": "Spring Boot, Angular, Microservices, PostgreSQL"
-    },
-    "tutor": {
-      "role": "Bootcamp Tutor",
-      "company": "Campus Dual TIC",
-      "date": "March 2023 - Present",
-      "description": "Tutor in development bootcamp with experience in Ontimize framework and Scrum methodology.",
-      "tags": "Ontimize, Scrum"
-    },
-    "rockbotic": {
-      "role": "Tutor",
-      "company": "Rockbotic",
-      "date": "January 2018 - May 2018",
-      "description": "Teaching programming, robotics and 3D design to primary school children.",
-      "tags": "Programming, Robotics"
-    },
-    "support1": {
-      "role": "Support Intern",
-      "company": "Universidade de Vigo",
-      "date": "November 2015 - October 2016"
-    },
-    "support2": {
-      "role": "Support Intern",
-      "company": "Universidade de Vigo",
-      "date": "October 2013 - September 2014"
-    }
+    "items": [
+      {
+        "role": "Full Stack Developer",
+        "company": "Imatia",
+        "date": "June 2018 - Present",
+        "description": "I developed applications with Spring Boot, evolving monolithic architectures to microservices. Experience with multiple databases (PostgreSQL, MySQL, MS SQL Server, MongoDB) in a Scrum/Agile environment.",
+        "tags": "Spring Boot, Angular, Microservices, PostgreSQL"
+      },
+      {
+        "role": "Bootcamp Tutor",
+        "company": "Campus Dual TIC",
+        "date": "March 2023 - Present",
+        "description": "Tutor in development bootcamp with experience in Ontimize framework and Scrum methodology.",
+        "tags": "Ontimize, Scrum"
+      },
+      {
+        "role": "Tutor",
+        "company": "Rockbotic",
+        "date": "January 2018 - May 2018",
+        "description": "Teaching programming, robotics and 3D design to primary school children.",
+        "tags": "Programming, Robotics"
+      },
+      {
+        "role": "Support Intern",
+        "company": "Universidade de Vigo",
+        "date": "November 2015 - October 2016"
+      },
+      {
+        "role": "Support Intern",
+        "company": "Universidade de Vigo",
+        "date": "October 2013 - September 2014"
+      }
+    ]
   },
   "education": {
     "title": "Education",
@@ -79,7 +81,25 @@
       "title": "Technician in Computer Systems Exploitation",
       "place": "I.E.S Maximino Romero de Lema",
       "date": "September 2007 - June 2009"
-    }
+    },
+    "items": [
+      {
+        "title": "Bachelor's Degree in Computer Engineering",
+        "place": "Universidade de Vigo",
+        "date": "September 2012 - July 2017",
+        "specialization": "Software Engineering, Information Technologies"
+      },
+      {
+        "title": "Higher Technician in Computer Application Development",
+        "place": "I.E.S San Clemente",
+        "date": "September 2010 - June 2012"
+      },
+      {
+        "title": "Technician in Computer Systems Exploitation",
+        "place": "I.E.S Maximino Romero de Lema",
+        "date": "September 2007 - June 2009"
+      }
+    ]
   },
   "skills": {
     "title": "Skills",
@@ -98,7 +118,49 @@
     "course5": "Master Redux from scratch with Redux core, Redux-toolkit, react-redux library",
     "course6": "Product Owner Bootcamp",
     "course7": "Angular - The Complete Guide (2022 Edition)",
-    "course8": "Testing Spring Boot: Beginner to Guru"
+    "course8": "Testing Spring Boot: Beginner to Guru",
+    "items": [
+      {
+        "title": "Complete Course on Prompt Engineering for Generative AI A-Z",
+        "platform": "Udemy",
+        "date": "March 2026"
+      },
+      {
+        "title": "Clean Architecture for Beginners: A Practical Guide",
+        "platform": "Udemy",
+        "date": "November 2025"
+      },
+      {
+        "title": "Clean Code",
+        "platform": "Udemy",
+        "date": "October 2025"
+      },
+      {
+        "title": "ChatGPT for Professionals: Leverage Generative AI at Work",
+        "platform": "TrainingIT",
+        "date": "March 2025"
+      },
+      {
+        "title": "Master Redux from scratch with Redux core, Redux-toolkit, react-redux library",
+        "platform": "Udemy",
+        "date": "July 2024"
+      },
+      {
+        "title": "Product Owner Bootcamp",
+        "platform": "Campus Dual TIC",
+        "date": "November 2023"
+      },
+      {
+        "title": "Angular - The Complete Guide (2022 Edition)",
+        "platform": "Udemy",
+        "date": "June 2022"
+      },
+      {
+        "title": "Testing Spring Boot: Beginner to Guru",
+        "platform": "Udemy",
+        "date": "May 2020"
+      }
+    ]
   },
   "certificates": {
     "title": "Certifications",
@@ -107,7 +169,34 @@
     "ibm1": "Data Usability",
     "ibm2": "Cybersecurity Fundamentals",
     "meta": "Certified Digital Marketing Associate",
-    "pearson": "IT Specialist - Python"
+    "pearson": "IT Specialist - Python",
+    "items": [
+      {
+        "title": "Azure Data Fundamentals",
+        "issuer": "Microsoft",
+        "date": "April 2026"
+      },
+      {
+        "title": "Azure AI Fundamentals",
+        "issuer": "Microsoft",
+        "date": "April 2026"
+      },
+      {
+        "title": "Data Usability",
+        "issuer": "IBM",
+        "date": "February 2026"
+      },
+      {
+        "title": "Certified Digital Marketing Associate",
+        "issuer": "Meta",
+        "date": "April 2026"
+      },
+      {
+        "title": "IT Specialist - Python",
+        "issuer": "Pearson",
+        "date": "April 2026"
+      }
+    ]
   },
   "languages": {
     "title": "Languages",
@@ -115,7 +204,21 @@
     "galician": "Galician",
     "english": "English",
     "native": "Native",
-    "toeic": "TOEIC B1"
+    "toeic": "TOEIC B1",
+    "items": [
+      {
+        "name": "Spanish",
+        "level": "Native"
+      },
+      {
+        "name": "Galician",
+        "level": "Native"
+      },
+      {
+        "name": "English",
+        "level": "TOEIC B1"
+      }
+    ]
   },
   "pdf": {
     "professionalSummary": "Professional Summary",

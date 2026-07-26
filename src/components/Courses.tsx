@@ -8,55 +8,20 @@ import { animationPresets, commonAnimations } from "../utils/animations";
 const Courses = () => {
   const { t } = useTranslation();
 
-  const courses = [
-    {
-      title: t("courses.course1"),
-      platform: "Udemy",
-      date: "Marzo 2026",
-      link: "https://www.udemy.com/certificate/UC-226caf29-4bc3-4edc-a760-ecbf7f15b344/",
-    },
-    {
-      title: t("courses.course2"),
-      platform: "Udemy",
-      date: "Noviembre 2025",
-      link: "https://www.udemy.com/certificate/UC-ecb68819-17a7-48b3-b5d2-cfc05565c10d/",
-    },
-    {
-      title: t("courses.course3"),
-      platform: "Udemy",
-      date: "Octubre 2025",
-      link: "https://www.udemy.com/certificate/UC-78419787-272d-44ae-858d-321c88aee857/",
-    },
-    {
-      title: t("courses.course4"),
-      platform: "TrainingIT",
-      date: "Marzo 2025",
-      link: "https://cursos.trainingit.es/mod/customcert/verify_certificate.php?code=fvBZWKsTCf",
-    },
-    {
-      title: t("courses.course5"),
-      platform: "Udemy",
-      date: "Julio 2024",
-      link: "https://udemy.com/certificate/UC-b051741a-84e6-4c75-bd2b-24fa4cc2d1cc/",
-    },
-    {
-      title: t("courses.course6"),
-      platform: "Campus Dual TIC",
-      date: "Noviembre 2023",
-    },
-    {
-      title: t("courses.course7"),
-      platform: "Udemy",
-      date: "Junio 2022",
-      link: "https://www.udemy.com/certificate/UC-c08c23e1-01b4-47e6-b4f0-60beb8652401/",
-    },
-    {
-      title: t("courses.course8"),
-      platform: "Udemy",
-      date: "Mayo 2020",
-      link: "https://www.udemy.com/certificate/UC-e5425079-5301-47e8-b3f4-23d56e4dcc79/",
-    },
-  ];
+  type CourseItem = {
+    title: string;
+    platform: string;
+    date: string;
+  };
+
+  const courses = (t("courses.items", {
+    returnObjects: true,
+    defaultValue: [],
+  }) as CourseItem[]).map((item) => ({
+    title: item.title,
+    platform: item.platform,
+    date: item.date,
+  }));
   return (
     <ScrollReveal >
       <ParallaxSection offset={40}>

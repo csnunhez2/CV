@@ -2,118 +2,131 @@ import { useTranslation } from "react-i18next";
 
 const CVPrint = () => {
   const { t } = useTranslation();
-  const experienceData = [
-    {
-      role: t("experience.fullstack.role"),
-      company: t("experience.fullstack.company"),
-      date: t("experience.fullstack.date"),
-      description: t("experience.fullstack.description"),
-      tags: ["Spring Boot", "Angular", "Microservicios", "PostgreSQL"],
-    },
-    {
-      role: t("experience.tutor.role"),
-      company: t("experience.tutor.company"),
-      date: t("experience.tutor.date"),
-      description: t("experience.tutor.description"),
-      tags: ["Ontimize", "Scrum"],
-    },
-    {
-      role: t("experience.rockbotic.role"),
-      company: t("experience.rockbotic.company"),
-      date: t("experience.rockbotic.date"),
-      description: t("experience.rockbotic.description"),
-      tags: ["Programación", "Robótica"],
-    },
-  ];
 
-  const educationData = [
-    {
-      title: t("education.degree1.title"),
-      place: t("education.degree1.place"),
-      date: t("education.degree1.date"),
-      specialization: t("education.degree1.specialization"),
-    },
-    {
-      title: t("education.degree2.title"),
-      place: t("education.degree2.place"),
-      date: t("education.degree2.date"),
-    },
-    {
-      title: t("education.degree3.title"),
-      place: t("education.degree3.place"),
-      date: t("education.degree3.date"),
-    },
-  ];
+  type ExperienceItem = {
+    role: string;
+    company: string;
+    date: string;
+    description?: string;
+    tags?: string;
+  };
+
+  type EducationItem = {
+    title: string;
+    place: string;
+    date: string;
+    specialization?: string;
+  };
+
+  type CourseItem = {
+    title: string;
+    platform: string;
+    date: string;
+  };
+
+  type CertificateItem = {
+    title: string;
+    issuer: string;
+    date: string;
+  };
+
+  type LanguageItem = {
+    name: string;
+    level: string;
+  };
+
+  const aboutParagraphs = [t("about.p1"), t("about.p2"), t("about.p3"), t("about.p4"), t("about.p5")];
+
+  const experienceData = (t("experience.items", {
+    returnObjects: true,
+    defaultValue: [],
+  }) as ExperienceItem[]).map((item) => ({
+    role: item.role,
+    company: item.company,
+    date: item.date,
+    description: item.description ?? "",
+    tags: item.tags
+      ? item.tags.split(",").map((tag) => tag.trim()).filter(Boolean)
+      : [],
+  }));
+
+  const educationData = (t("education.items", {
+    returnObjects: true,
+    defaultValue: [],
+  }) as EducationItem[]).map((item) => ({
+    title: item.title,
+    place: item.place,
+    date: item.date,
+    specialization: item.specialization ?? "",
+  }));
 
   const skillsData = [
     { category: t("skills.backend"), skills: ["Java", "Spring Boot", "Microservices", "REST APIs"] },
     { category: t("skills.database"), skills: ["SQL", "PostgreSQL", "MySQL", "MongoDB"] },
     { category: t("skills.devops"), skills: ["Docker", "CI/CD", "Git", "Maven"] },
     { category: t("skills.testing"), skills: ["JUnit", "Mockito", "TDD", "Integration Testing"] },
-    { category: t("skills.frontend"), skills: ["Angular", "React", "TypeScript", "Tailwind CSS"] },
+    { category: t("skills.frontend"), skills: ["Angular", "React", "TypeScript"] },
   ];
 
-  const certificatesData = [
-    { title: t("certificates.azure1"), issuer: "Microsoft", date: "April 2026" },
-    { title: t("certificates.azure2"), issuer: "Microsoft", date: "April 2026" },
-    { title: t("certificates.ibm1"), issuer: "IBM", date: "February 2026" },
-    { title: t("certificates.meta"), issuer: "Meta", date: "April 2026" },
-    { title: t("certificates.pearson"), issuer: "Pearson", date: "April 2026" },
-  ];
+  const certificatesData = (t("certificates.items", {
+    returnObjects: true,
+    defaultValue: [],
+  }) as CertificateItem[]).map((item) => ({
+    title: item.title,
+    issuer: item.issuer,
+    date: item.date,
+  }));
 
-  const coursesData = [
-    { title: t("courses.course1"), platform: "Udemy", date: "March 2026" },
-    { title: t("courses.course2"), platform: "Udemy", date: "November 2025" },
-    { title: t("courses.course3"), platform: "Udemy", date: "October 2025" },
-    { title: t("courses.course4"), platform: "TrainingIT", date: "March 2025" },
-    { title: t("courses.course5"), platform: "Udemy", date: "July 2024" },
-    { title: t("courses.course6"), platform: "Campus Dual TIC", date: "November 2023" },
-    { title: t("courses.course7"), platform: "Udemy", date: "June 2022" },
-    { title: t("courses.course8"), platform: "Udemy", date: "May 2020" },
-  ];
+  const coursesData = (t("courses.items", {
+    returnObjects: true,
+    defaultValue: [],
+  }) as CourseItem[]).map((item) => ({
+    title: item.title,
+    platform: item.platform,
+    date: item.date,
+  }));
 
-  const languagesData = [
-    { name: t("languages.spanish"), level: t("languages.native") },
-    { name: t("languages.galician"), level: t("languages.native") },
-    { name: t("languages.english"), level: t("languages.toeic") },
-  ];
+  const languagesData = (t("languages.items", {
+    returnObjects: true,
+    defaultValue: [],
+  }) as LanguageItem[]).map((item) => ({
+    name: item.name,
+    level: item.level,
+  }));
 
   return (
     <div style={styles.container}>
       {/* Header */}
       <div style={styles.header}>
         <div>
-          <h1 style={styles.name}>CÉSAR NUNHEZ</h1>
-          <p style={styles.title}>Software Engineer</p>
+          <h1 style={styles.name}>César Miguel Santiago Núñez</h1>
+          <p style={styles.title}>{t("header.softwareEngineer")}</p>
         </div>
         <div style={styles.contact}>
-          <p>Email: cesar.santiago.nunhez@gmail.com</p>
-          <p>GitHub: github.com/csnunhez2</p>
-          <p>LinkedIn: linkedin.com/in/csnunhez</p>
+          <p>
+            Email: <a href="mailto:cesar.santiago.nunhez@gmail.com" style={styles.link}>cesar.santiago.nunhez@gmail.com</a>
+          </p>
+          <p>
+            GitHub: <a href="https://github.com/csnunhez2" target="_blank" rel="noopener noreferrer" style={styles.link}>github.com/csnunhez2</a>
+          </p>
+          <p>
+            LinkedIn: <a href="https://linkedin.com/in/csnunhez" target="_blank" rel="noopener noreferrer" style={styles.link}>linkedin.com/in/csnunhez</a>
+          </p>
         </div>
       </div>
 
-      {/* Professional Summary */}
+      {/* About */}
       <div style={styles.section}>
-        <h2 style={styles.sectionTitle}>{t('pdf.professionalSummary').toUpperCase()}</h2>
-        <p style={styles.paragraph}>
-          {t('pdf.summaryText')}
-        </p>
-      </div>
-
-      {/* Core Skills */}
-      <div style={styles.section}>
-        <h2 style={styles.sectionTitle}>{t('pdf.technicalSkills').toUpperCase()}</h2>
-        {skillsData.map((skillGroup, idx) => (
-          <div key={idx} style={styles.skillGroup}>
-            <p style={styles.skillCategory}><strong>{skillGroup.category}:</strong> {skillGroup.skills.join(", ")}</p>
-          </div>
+        <h2 style={styles.sectionTitle}>{t("about.title").toUpperCase()}</h2>
+        {aboutParagraphs.map((paragraph, idx) => (
+          <p key={idx} style={styles.paragraph}>{paragraph}</p>
         ))}
+        <p style={styles.paragraph}><strong>{t("about.tags")}</strong></p>
       </div>
 
-      {/* Professional Experience */}
+      {/* Experience */}
       <div style={styles.section}>
-        <h2 style={styles.sectionTitle}>{t('pdf.professionalExperience').toUpperCase()}</h2>
+        <h2 style={styles.sectionTitle}>{t("experience.title").toUpperCase()}</h2>
         {experienceData.map((exp, idx) => (
           <div key={idx} style={styles.experience}>
             <div style={styles.experienceHeader}>
@@ -121,7 +134,10 @@ const CVPrint = () => {
               <p style={styles.date}>{exp.date}</p>
             </div>
             <p style={styles.company}>{exp.company}</p>
-            <p style={styles.description}>{exp.description}</p>
+            {exp.description && <p style={styles.description}>{exp.description}</p>}
+            {exp.tags.length > 0 && (
+              <p style={styles.description}><strong>Tags:</strong> {exp.tags.join(", ")}</p>
+            )}
             {idx < experienceData.length - 1 && <div style={styles.divider} />}
           </div>
         ))}
@@ -129,7 +145,7 @@ const CVPrint = () => {
 
       {/* Education */}
       <div style={styles.section}>
-        <h2 style={styles.sectionTitle}>{t('pdf.educationSection').toUpperCase()}</h2>
+        <h2 style={styles.sectionTitle}>{t("education.title").toUpperCase()}</h2>
         {educationData.map((edu, idx) => (
           <div key={idx} style={styles.education}>
             <div style={styles.educationHeader}>
@@ -143,23 +159,19 @@ const CVPrint = () => {
         ))}
       </div>
 
-      {/* Certifications */}
+      {/* Skills */}
       <div style={styles.section}>
-        <h2 style={styles.sectionTitle}>{t('pdf.certificationsSection').toUpperCase()}</h2>
-        {certificatesData.map((cert, idx) => (
-          <div key={idx} style={styles.certification}>
-            <div style={styles.certHeader}>
-              <p style={styles.certTitle}>{cert.title}</p>
-              <p style={styles.date}>{cert.date}</p>
-            </div>
-            <p style={styles.certIssuer}>{cert.issuer}</p>
+        <h2 style={styles.sectionTitle}>{t("skills.title").toUpperCase()}</h2>
+        {skillsData.map((skillGroup, idx) => (
+          <div key={idx} style={styles.skillGroup}>
+            <p style={styles.skillCategory}><strong>{skillGroup.category}:</strong> {skillGroup.skills.join(", ")}</p>
           </div>
         ))}
       </div>
 
       {/* Courses */}
       <div style={styles.section}>
-        <h2 style={styles.sectionTitle}>{t('pdf.coursesSection').toUpperCase()}</h2>
+        <h2 style={styles.sectionTitle}>{t("courses.title").toUpperCase()}</h2>
         {coursesData.map((course, idx) => (
           <div key={idx} style={styles.course}>
             <div style={styles.courseHeader}>
@@ -171,9 +183,23 @@ const CVPrint = () => {
         ))}
       </div>
 
+      {/* Certifications */}
+      <div style={styles.section}>
+        <h2 style={styles.sectionTitle}>{t("certificates.title").toUpperCase()}</h2>
+        {certificatesData.map((cert, idx) => (
+          <div key={idx} style={styles.certification}>
+            <div style={styles.certHeader}>
+              <p style={styles.certTitle}>{cert.title}</p>
+              <p style={styles.date}>{cert.date}</p>
+            </div>
+            <p style={styles.certIssuer}>{cert.issuer}</p>
+          </div>
+        ))}
+      </div>
+
       {/* Languages */}
       <div style={styles.section}>
-        <h2 style={styles.sectionTitle}>{t('pdf.languagesSection').toUpperCase()}</h2>
+        <h2 style={styles.sectionTitle}>{t("languages.title").toUpperCase()}</h2>
         <div style={styles.languagesContainer}>
           {languagesData.map((lang, idx) => (
             <div key={idx} style={styles.language}>
@@ -219,6 +245,10 @@ const styles: Record<string, React.CSSProperties> = {
   contact: {
     textAlign: "right",
     fontSize: "9px",
+  },
+  link: {
+    color: "#2563eb",
+    textDecoration: "underline",
   },
   section: {
     marginBottom: "11px",
