@@ -21,7 +21,7 @@ const ScrollReveal = ({ children, delay = 0 }: ScrollRevealProps) => {
       transition={{
         duration: 0.6,
         delay,
-        ease: "easeOut",
+        ease: [0.16, 1, 0.3, 1] as const,
       }}
     >
       {children}

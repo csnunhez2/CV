@@ -7,12 +7,6 @@ const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
   const { t } = useTranslation();
 
-  const getNextTheme = () => {
-    if (theme === 'light') return 'dark';
-    if (theme === 'dark') return 'cyberpunk';
-    return 'light';
-  };
-
   const getIcon = () => {
     switch (theme) {
       case 'light':
@@ -21,17 +15,6 @@ const ThemeToggle = () => {
         return <Zap size={18} />;
       case 'cyberpunk':
         return <Sun size={18} />;
-    }
-  };
-
-  const getHoverGradient = () => {
-    switch (theme) {
-      case 'light':
-        return 'hover:from-purple-600 hover:to-purple-700';
-      case 'dark':
-        return 'hover:from-cyan-600 hover:to-cyan-700';
-      case 'cyberpunk':
-        return 'hover:from-pink-600 hover:to-pink-700';
     }
   };
 

@@ -95,8 +95,9 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {/* Name */}
                   <motion.div
-                    {...fabAnimations.formFieldStagger}
-                    custom={0}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0, ease: [0.16, 1, 0.3, 1] as const }}
                   >
                     <label className="block text-sm font-medium text-secondary mb-1">Nome</label>
                     <input
@@ -119,8 +120,9 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
 
                   {/* Email */}
                   <motion.div
-                    {...fabAnimations.formFieldStagger}
-                    custom={1}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1, ease: [0.16, 1, 0.3, 1] as const }}
                   >
                     <label className="block text-sm font-medium text-secondary mb-1">Email</label>
                     <input
@@ -143,8 +145,9 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
 
                   {/* Message */}
                   <motion.div
-                    {...fabAnimations.formFieldStagger}
-                    custom={2}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0.2, ease: [0.16, 1, 0.3, 1] as const }}
                   >
                     <label className="block text-sm font-medium text-secondary mb-1">Mensaxe</label>
                     <textarea

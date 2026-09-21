@@ -32,7 +32,9 @@ const Languages = () => {
           className="card"
         >
       <motion.h2
-        {...animationPresets.headingEnter}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }}
         className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animated bg-[length:200%_200%] flex items-center gap-3"
       >
         <Globe size={32} /> {t("languages.title")}
@@ -45,9 +47,10 @@ const Languages = () => {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="space-y-3"
-          >  <div className="flex items-center justify-between">
+          >
+            <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <span className="text-3xl">{lang.flag}</span>
                 <div>
@@ -63,7 +66,7 @@ const Languages = () => {
                 className="h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"
                 initial={{ width: 0 }}
                 animate={{ width: `${lang.percentage}%` }}
-                transition={{ duration: 0.8, delay: i * 0.2, ease: "easeOut" }}
+                transition={{ duration: 0.8, delay: i * 0.2, ease: [0.16, 1, 0.3, 1] }}
               />
             </div>
           </motion.div>

@@ -15,7 +15,6 @@ import ThemeToggle from "./ThemeToggle";
 import GitHubIcon from "../assets/icons/github.svg";
 import LinkedInIcon from "../assets/icons/linkedin.svg";
 import html2pdf from "html2pdf.js";
-import { commonAnimations } from "../utils/animations";
 
 const Sidebar = ({ current, setCurrent, onItemClick }: any) => {
   const { t } = useTranslation();

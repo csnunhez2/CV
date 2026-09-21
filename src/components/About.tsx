@@ -8,7 +8,6 @@ const About = () => {
   const { t } = useTranslation();
 
   const containerVariants = animationPresets.containerStagger;
-  const paragraphVariants = animationPresets.itemSlideLeft;
 
   const paragraphs = [
     t("about.p1"),

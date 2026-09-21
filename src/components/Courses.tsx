@@ -12,6 +12,7 @@ const Courses = () => {
     title: string;
     platform: string;
     date: string;
+    link: string;
   };
 
   const courses = (t("courses.items", {
@@ -21,6 +22,7 @@ const Courses = () => {
     title: item.title,
     platform: item.platform,
     date: item.date,
+    link: item.link,
   }));
   return (
     <ScrollReveal >

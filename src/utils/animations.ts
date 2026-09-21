@@ -1,11 +1,13 @@
 // Standardized animation variants for consistent motion across the project
 
+import type { Transition } from "framer-motion";
+
 export const animationPresets = {
   // Page/Section entry animations
   pageEnter: {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const } satisfies Transition,
   },
 
   // Container animations with staggered children
@@ -26,7 +28,7 @@ export const animationPresets = {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } satisfies Transition,
     },
   },
 
@@ -36,7 +38,7 @@ export const animationPresets = {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } satisfies Transition,
     },
   },
 
@@ -44,36 +46,36 @@ export const animationPresets = {
   headingEnter: {
     initial: { opacity: 0, y: -20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } satisfies Transition,
   },
 
   // Hover animations
   hoverScale: {
     whileHover: { scale: 1.05 },
     whileTap: { scale: 0.95 },
-    transition: { type: "spring", stiffness: 400, damping: 17 },
+    transition: { type: "spring", stiffness: 400, damping: 17 } satisfies Transition,
   },
 
   hoverScaleSmall: {
     whileHover: { scale: 1.02 },
-    transition: { type: "spring", stiffness: 400, damping: 17 },
+    transition: { type: "spring", stiffness: 400, damping: 17 } satisfies Transition,
   },
 
   hoverScaleMedium: {
     whileHover: { scale: 1.08 },
-    transition: { type: "spring", stiffness: 400, damping: 17 },
+    transition: { type: "spring", stiffness: 400, damping: 17 } satisfies Transition,
   },
 
   hoverScaleLarge: {
     whileHover: { scale: 1.15 },
     whileTap: { scale: 0.9 },
-    transition: { type: "spring", stiffness: 400, damping: 17 },
+    transition: { type: "spring", stiffness: 400, damping: 17 } satisfies Transition,
   },
 
   // Icon tilt animation
   iconTilt: {
     whileHover: { scale: 1.1, rotate: 5 },
-    transition: { type: "spring", stiffness: 400, damping: 10 },
+    transition: { type: "spring", stiffness: 400, damping: 10 } satisfies Transition,
   },
 
   // Expand/Collapse animations
@@ -81,7 +83,7 @@ export const animationPresets = {
     initial: { opacity: 0, height: 0 },
     animate: { opacity: 1, height: "auto" },
     exit: { opacity: 0, height: 0 },
-    transition: { duration: 0.3, ease: "easeInOut" },
+    transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] as const } satisfies Transition,
   },
 
   // Icon/Button animations
@@ -89,43 +91,38 @@ export const animationPresets = {
     initial: { opacity: 0, scale: 0.8 },
     animate: { opacity: 1, scale: 1 },
     whileHover: { scale: 1.1, rotate: 5 },
-    transition: { type: "spring", stiffness: 400, damping: 10 },
+    transition: { type: "spring", stiffness: 400, damping: 10 } satisfies Transition,
   },
 
   // Rotate animations
   rotateHover: {
     whileHover: { rotate: 5 },
-    transition: { type: "spring", stiffness: 400, damping: 10 },
+    transition: { type: "spring", stiffness: 400, damping: 10 } satisfies Transition,
   },
 
   // Slide animations
   slideLeftHover: {
     whileHover: { x: 10 },
-    transition: { duration: 0.2 },
+    transition: { duration: 0.2 } satisfies Transition,
   },
 
   // Fade animations
   fadeIn: {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } satisfies Transition,
   },
 
   fadeInDelayed: (delay: number) => ({
     initial: { opacity: 0 },
     animate: { opacity: 1 },
-    transition: { duration: 0.5, delay, ease: "easeOut" },
+    transition: { duration: 0.5, delay, ease: [0.16, 1, 0.3, 1] as const } satisfies Transition,
   }),
 
   // Stagger animation for tags/pills
   tagStagger: {
     initial: { opacity: 0, scale: 0.8 },
     animate: { opacity: 1, scale: 1 },
-    transition: (index: number) => ({
-      duration: 0.3,
-      delay: index * 0.05,
-      ease: "easeOut",
-    }),
   },
 };
 
@@ -135,7 +132,7 @@ export const commonAnimations = {
   header: {
     initial: { opacity: 0, y: -20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 },
+    transition: { duration: 0.5 } satisfies Transition,
   },
 
   // Logo/Title animation
@@ -163,12 +160,12 @@ export const commonAnimations = {
   // List item animation
   listItem: {
     whileHover: { x: 10 },
-    transition: { duration: 0.2 },
+    transition: { duration: 0.2 } satisfies Transition,
   },
 
   // Icon tilt on hover
   iconTilt: {
     whileHover: { scale: 1.1, rotate: 5 },
-    transition: { type: "spring", stiffness: 400, damping: 10 },
+    transition: { type: "spring", stiffness: 400, damping: 10 } satisfies Transition,
   },
 };

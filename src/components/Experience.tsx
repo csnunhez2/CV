@@ -109,8 +109,9 @@ const Experience = () => {
                         {item.tags.map((tag, idx) => (
                           <motion.span
                             key={idx}
-                            {...animationPresets.tagStagger}
-                            custom={idx}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.3, delay: idx * 0.05, ease: [0.16, 1, 0.3, 1] as const }}
                             whileHover={{ scale: 1.05 }}
                             className="skill-pill"
                           >

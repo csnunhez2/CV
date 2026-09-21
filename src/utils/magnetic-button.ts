@@ -1,4 +1,4 @@
-import { MotionValue, useMotionValue, useTransform } from "framer-motion";
+import { useMotionValue } from "framer-motion";
 
 export const useMagneticButton = () => {
   const x = useMotionValue(0);

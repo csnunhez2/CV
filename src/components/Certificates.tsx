@@ -27,6 +27,7 @@ const Certificates = () => {
     title: string;
     issuer: string;
     date: string;
+    link: string;
   };
 
   const certificates = (t("certificates.items", {
@@ -36,6 +37,7 @@ const Certificates = () => {
     title: item.title,
     issuer: item.issuer,
     date: item.date,
+    link: item.link,
   }));
 
   return (
@@ -90,7 +92,6 @@ const Certificates = () => {
                   <span className="font-medium text-main">{cert.issuer}</span>
                   <span className="text-tertiary">
                     {cert.date}
-                    {cert.end_date && ` - ${cert.end_date}`}
                   </span>
                 </div>
               </div>
