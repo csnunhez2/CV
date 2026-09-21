@@ -68,35 +68,35 @@
     "degree1": {
       "title": "Grado en Ingeniería Informática",
       "place": "Universidade de Vigo",
-      "date": "Septiembre 2012 - Julho 2017",
+      "date": "Septiembre 2012 - Julio 2017",
       "specialization": "Ingeniería de Software, Tecnologías de la Información"
     },
     "degree2": {
       "title": "Técnico Superior en Desarrollo de Aplicaciones Informáticas",
       "place": "I.E.S San Clemente",
-      "date": "Septiembre 2010 - Junho 2012"
+      "date": "Septiembre 2010 - Junio 2012"
     },
     "degree3": {
       "title": "Técnico en Explotación de Sistemas Informáticos",
       "place": "I.E.S Maximino Romero de Lema",
-      "date": "Septiembre 2007 - Junho 2009"
+      "date": "Septiembre 2007 - Junio 2009"
     },
     "items": [
       {
         "title": "Grado en Ingeniería Informática",
         "place": "Universidade de Vigo",
-        "date": "Septiembre 2012 - Julho 2017",
+        "date": "Septiembre 2012 - Julio 2017",
         "specialization": "Ingeniería de Software, Tecnologías de la Información"
       },
       {
         "title": "Técnico Superior en Desarrollo de Aplicaciones Informáticas",
         "place": "I.E.S San Clemente",
-        "date": "Septiembre 2010 - Junho 2012"
+        "date": "Septiembre 2010 - Junio 2012"
       },
       {
         "title": "Técnico en Explotación de Sistemas Informáticos",
         "place": "I.E.S Maximino Romero de Lema",
-        "date": "Septiembre 2007 - Junho 2009"
+        "date": "Septiembre 2007 - Junio 2009"
       }
     ]
   },
