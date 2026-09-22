@@ -1,8 +1,7 @@
 import { useTranslation } from "react-i18next";
 
 const CVPrint = () => {
-  const { t, i18n } = useTranslation();
-  const shouldBreakBeforeSkills = i18n.language.startsWith("en");
+  const { t } = useTranslation();
 
   type ExperienceItem = {
     role: string;
@@ -161,13 +160,7 @@ const CVPrint = () => {
       </div>
 
       {/* Skills */}
-      <div
-        style={{
-          ...styles.section,
-          breakBefore: shouldBreakBeforeSkills ? "page" : "auto",
-          pageBreakBefore: shouldBreakBeforeSkills ? "always" : "auto",
-        }}
-      >
+      <div style={styles.section}>
         <h2 style={styles.sectionTitle}>{t("skills.title").toUpperCase()}</h2>
         {skillsData.map((skillGroup, idx) => (
           <div key={idx} style={styles.skillGroup}>
