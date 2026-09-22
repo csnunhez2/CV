@@ -24,7 +24,8 @@
     "p2": "Throughout my career I have participated in internal and client projects for international clients, which has allowed me to work in collaborative environments, with agile methodologies and with a clear focus on software quality, testing and best practices.",
     "p3": "In recent years I have also taken a more active role within teams, supporting other developers, reviewing code and helping in technical decision making, in addition to my experience as a tutor in bootcamps, where I have accompanied junior profiles in their professional growth.",
     "p4": "I am particularly interested in continuing to evolve towards roles with greater impact on product and architecture, where I can not only develop solutions, but also participate in their design, scalability and continuous improvement.",
-    "p5": "I consider myself a consistent person, with an analytical mindset and team-oriented, who enjoys understanding problems in depth and seeking simple, maintainable and quality solutions.",
+    "p5": "Alongside my professional experience, I have continued expanding my knowledge of new technologies and development tools, including React and TypeScript, while progressively incorporating AI tools into my development workflow, both professionally and in personal projects. I use them to support tasks such as code generation and review, debugging, documentation, problem solving, and exploring different implementation approaches. As part of this learning process, I have developed and deployed my own CV as a personal project using React and TypeScript, leveraging AI tools throughout its development.",
+    "p6": "I consider myself a consistent person, with an analytical mindset and team-oriented, who enjoys understanding problems in depth and seeking simple, maintainable and quality solutions.",
     "tags": "Java, Spring Boot, Microservices, Backend, Testing"
   },
   "experience": {
@@ -120,6 +121,12 @@
     "course8": "Testing Spring Boot: Beginner to Guru",
     "items": [
       {
+        "title": "Vibe Coding: Responsible Coding Practices",
+        "platform": "Udemy",
+        "date": "June 2026",
+        "link": "https://www.udemy.com/certificate/UC-d8229ca8-0747-439d-b6ac-81d93b55f084/"
+      },
+      {
         "title": "Complete Course on Prompt Engineering for Generative AI A-Z",
         "platform": "Udemy",
         "date": "March 2026",
@@ -177,6 +184,48 @@
     "meta": "Certified Digital Marketing Associate",
     "pearson": "IT Specialist - Python",
     "items": [
+      {
+        "title": "Microsoft 365 Certified: Copilot and Agent Administration Fundamentals",
+        "issuer": "Microsoft",
+        "date": "August 2026",
+        "link": "https://www.credly.com/badges/b840ccb7-7fc1-422b-be65-e8a22eb4a44f/linked_in_profile"
+      },
+      {
+        "title": "AI Capabilities and Limitations",
+        "issuer": "Anthropic",
+        "date": "May 2026",
+        "link": "https://verify.skilljar.com/c/6q227mhy5u9k"
+      },
+      {
+        "title": "IBM SkillsBuild Data Analytics Certificate",
+        "issuer": "IBM",
+        "date": "May 2026",
+        "link": "https://www.credly.com/badges/2a5dc9a9-a355-4b8e-990a-369b9ee49e40/linked_in_profile"
+      },
+      {
+        "title": "Data Visualization and Presentation",
+        "issuer": "IBM",
+        "date": "May 2026",
+        "link": "https://www.credly.com/badges/4bc8b819-5fbc-4805-a14c-e9cd37386828/linked_in_profile"
+      },
+      {
+        "title": "Data Preparation for Analysis",
+        "issuer": "IBM",
+        "date": "May 2026",
+        "link": "https://www.credly.com/badges/65919bfe-53ba-415d-b9be-d47aa09355fd/linked_in_profile"
+      },
+      {
+        "title": "Data Collection and Analysis",
+        "issuer": "IBM",
+        "date": "May 2026",
+        "link": "https://www.credly.com/badges/afdeaa75-02e5-4d8f-99dd-751acd1903f0/linked_in_profile"
+      },
+      {
+        "title": "Introduction to Inferential and Descriptive Statistics",
+        "issuer": "IBM",
+        "date": "May 2026",
+        "link": "https://www.credly.com/badges/4c798ddf-c0e8-44b7-8299-8ebf5678e4ec/linked_in_profile"
+      },
       {
         "title": "Data Usability for Organizations",
         "issuer": "IBM",

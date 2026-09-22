@@ -36,7 +36,7 @@ const CVPrint = () => {
     level: string;
   };
 
-  const aboutParagraphs = [t("about.p1"), t("about.p2"), t("about.p3"), t("about.p4"), t("about.p5")];
+  const aboutParagraphs = [t("about.p1"), t("about.p2"), t("about.p3"), t("about.p4"), t("about.p5"), t("about.p6")];
 
   const experienceData = (t("experience.items", {
     returnObjects: true,

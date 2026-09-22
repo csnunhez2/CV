@@ -24,7 +24,8 @@
     "p2": "A lo largo de mi carrera he participado en proyectos tanto internos como para clientes internacionales, lo que me ha permitido trabajar en entornos colaborativos, con metodologías ágiles y con un enfoque claro en la calidad del software, el testing y las buenas prácticas.",
     "p3": "En los últimos años también he asumido un rol más activo dentro de los equipos, apoyando a otros desarrolladores, revisando código y ayudando en la toma de decisiones técnicas, además de mi experiencia como tutor en bootcamps, donde he acompañado a perfiles junior en su crecimiento profesional.",
     "p4": "Me interesa especialmente seguir evolucionando hacia roles con mayor impacto en producto y arquitectura, donde pueda no solo desarrollar soluciones, sino también participar en su diseño, escalabilidad y mejora continua.",
-    "p5": "Me considero una persona constante, con mentalidad analítica y orientada a equipo, que disfruta entendiendo los problemas en profundidad y buscando soluciones simples, mantenibles y de calidad.",
+    "p5": "En paralelo, he seguido ampliando mis conocimientos en nuevas tecnologías y herramientas aplicadas al desarrollo, incluyendo React y TypeScript, y he incorporado progresivamente herramientas de IA como apoyo tanto en el ámbito profesional como en proyectos personales. Las utilizo principalmente para tareas como generación y revisión de código, debugging, documentación, resolución de problemas y exploración de diferentes alternativas de implementación. Como muestra de este aprendizaje, he desarrollado y desplegado mi propio CV como proyecto personal, utilizando React y TypeScript y aplicando herramientas de IA durante su desarrollo.",
+    "p6": "Me considero una persona constante, con mentalidad analítica y orientada a equipo, que disfruta entendiendo los problemas en profundidad y buscando soluciones simples, mantenibles y de calidad.",
     "tags": "Java, Spring Boot, Microservicios, Backend, Testing"
   },
   "experience": {
@@ -120,6 +121,12 @@
     "course8": "Testing Spring Boot: Beginner to Guru",
     "items": [
       {
+        "title": "Vibe Coding: De forma responsable",
+        "platform": "Udemy",
+        "date": "Junio 2026",
+        "link": "https://www.udemy.com/certificate/UC-d8229ca8-0747-439d-b6ac-81d93b55f084/"
+      },
+      {
         "title": "Curso Completo de Prompt Engineering para IA Generativa A-Z",
         "platform": "Udemy",
         "date": "Marzo 2026",
@@ -177,6 +184,48 @@
     "meta": "Certified Digital Marketing Associate",
     "pearson": "IT Specialist - Python",
     "items": [
+      {
+        "title": "Microsoft 365 Certified: Copilot and Agent Administration Fundamentals",
+        "issuer": "Microsoft",
+        "date": "Agosto 2026",
+        "link": "https://www.credly.com/badges/b840ccb7-7fc1-422b-be65-e8a22eb4a44f/linked_in_profile"
+      },
+      {
+        "title": "AI Capabilities and Limitations",
+        "issuer": "Anthropic",
+        "date": "Mayo 2026",
+        "link": "https://verify.skilljar.com/c/6q227mhy5u9k"
+      },
+      {
+        "title": "IBM SkillsBuild Data Analytics Certificate",
+        "issuer": "IBM",
+        "date": "Mayo 2026",
+        "link": "https://www.credly.com/badges/2a5dc9a9-a355-4b8e-990a-369b9ee49e40/linked_in_profile"
+      },
+      {
+        "title": "Data Visualization and Presentation",
+        "issuer": "IBM",
+        "date": "Mayo 2026",
+        "link": "https://www.credly.com/badges/4bc8b819-5fbc-4805-a14c-e9cd37386828/linked_in_profile"
+      },
+      {
+        "title": "Data Preparation for Analysis",
+        "issuer": "IBM",
+        "date": "Mayo 2026",
+        "link": "https://www.credly.com/badges/65919bfe-53ba-415d-b9be-d47aa09355fd/linked_in_profile"
+      },
+      {
+        "title": "Data Collection and Analysis",
+        "issuer": "IBM",
+        "date": "Mayo 2026",
+        "link": "https://www.credly.com/badges/afdeaa75-02e5-4d8f-99dd-751acd1903f0/linked_in_profile"
+      },
+      {
+        "title": "Introduction to Inferential and Descriptive Statistics",
+        "issuer": "IBM",
+        "date": "Mayo 2026",
+        "link": "https://www.credly.com/badges/4c798ddf-c0e8-44b7-8299-8ebf5678e4ec/linked_in_profile"
+      },
       {
         "title": "Data Usability for Organizations",
         "issuer": "IBM",

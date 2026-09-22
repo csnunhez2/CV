@@ -15,6 +15,7 @@ const About = () => {
     t("about.p3"),
     t("about.p4"),
     t("about.p5"),
+    t("about.p6"),
   ];
 
   return (
